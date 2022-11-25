@@ -899,7 +899,12 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
 # for one specific model at a time:
 if __name__ == "__main__":
 
-    s, s2, mape_s, mae_s, mae, mape, total_mins, train_loss, test_loss, for_plotting = main(seed=0, cuda=False,
-                                                                                            cell_type='gru', attention_model='BA', la_method='none',
-                                                                                            window_source_size=96, window_target_size=48, epochs=30,
-                                                                                            batch_size=256, hs=64, save_model=False)
+    s, s2, mape_s, mae_s, mae, mape, total_mins, train_loss, test_loss, for_plotting = main(
+		seed=0, # for reproducability
+		cuda=False, # change to True if available on your platform
+		cell_type='gru', attention_model='BA', la_method='none', # model architecture
+		window_source_size=96, # 96 * 15-minutes = 1 day
+		window_target_size=24, # 24 * 15-minutes = 6 hours
+		epochs=10, batch_size=256, hs=64, # overall training parameters
+		save_model=False
+		)
