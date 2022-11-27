@@ -830,33 +830,33 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
     print("\n\tACTUAL ACC. RESULTS: MAE, MAPE: {} and {}%".format(mae3, mape3*100.0))
 
     # plotting
-    plt.figure(1)
-    plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
-    plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
-    plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
-        window_source_size, window_target_size))
-    plt.xlabel("Time in 15 minute increments")
-    plt.ylabel("Value (normalized)")
-    plt.legend(loc='lower left')
+    # plt.figure(1)
+    # plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
+    # plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
+    # plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
+    #     window_source_size, window_target_size))
+    # plt.xlabel("Time in 15 minute increments")
+    # plt.ylabel("Value (normalized)")
+    # plt.legend(loc='lower left')
 
-    plt.figure(2)
-    plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
-    plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
-    plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
-        window_source_size, window_target_size))
-    plt.xlabel("Time in 15 minute increments")
-    plt.ylabel("Value (normalized)")
-    plt.legend(loc='lower left')
+    # plt.figure(2)
+    # plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
+    # plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
+    # plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
+    #     window_source_size, window_target_size))
+    # plt.xlabel("Time in 15 minute increments")
+    # plt.ylabel("Value (normalized)")
+    # plt.legend(loc='lower left')
 
-    plt.figure(3)
-    plt.plot(np.arange(len(y_last_Value)), y_last_Value, 'g', label='Actual')
-    plt.plot(np.arange(len(pred_last_Value)),
-             pred_last_Value, 'b', label='Predicted')
-    plt.title("Predicted vs Actual last test example, {} timesteps to {} timesteps".format(
-        window_source_size, window_target_size))
-    plt.xlabel("Time in 15 minute increments")
-    plt.ylabel("Value (normalized)")
-    plt.legend(loc='lower left')
+    # plt.figure(3)
+    # plt.plot(np.arange(len(y_last_Value)), y_last_Value, 'g', label='Actual')
+    # plt.plot(np.arange(len(pred_last_Value)),
+    #          pred_last_Value, 'b', label='Predicted')
+    # plt.title("Predicted vs Actual last test example, {} timesteps to {} timesteps".format(
+    #     window_source_size, window_target_size))
+    # plt.xlabel("Time in 15 minute increments")
+    # plt.ylabel("Value (normalized)")
+    # plt.legend(loc='lower left')
 
     plt.figure(4)
     plt.plot(np.arange(len(Value_actual[-4*24*30:])),
@@ -882,8 +882,9 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
     plt.ylabel("Loss")
 
     plt.figure(7)
-    plt.plot(len_loss, train_loss_array, 'k')
     plt.plot(len_loss, test_loss_array, 'r')
+    plt.autoscale(False)
+    plt.plot(len_loss, train_loss_array, 'k')
     plt.title("Train and Test Loss")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
@@ -910,8 +911,8 @@ if __name__ == "__main__":
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
 		cell_type='gru', attention_model='BA', la_method='none', # model architecture
-		window_source_size=96 * 7, # 7 days
+		window_source_size=96 * 4, # 4 days
 		window_target_size=24, # 6 hours
-		epochs=10, batch_size=256, hs=64, # overall training parameters
+		epochs=10, batch_size=128, hs=48, # overall training parameters
 		save_model=False
 		)
