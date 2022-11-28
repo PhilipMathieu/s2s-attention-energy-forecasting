@@ -550,8 +550,6 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
     STD = dataset.std(0)  # same with std here
     dataset = dataset / STD
 
-    # 15 minutes between rows.
-    # use 1 day (96 rows) to predict next half day (48 rows)
     print("Generating training and test data...")
     WINDOW_SOURCE_SIZE = window_source_size
     WINDOW_TARGET_SIZE = window_target_size
@@ -883,8 +881,9 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
 
     plt.figure(7)
     plt.plot(len_loss, test_loss_array, 'r')
-    plt.autoscale(False)
+    ylim = plt.gca().get_ylim()
     plt.plot(len_loss, train_loss_array, 'k')
+    plt.gca().set_ylim(ylim)
     plt.title("Train and Test Loss")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
