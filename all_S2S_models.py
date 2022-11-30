@@ -512,7 +512,7 @@ class S2S_LA_Model(nn.Module):
 
 # main function
 
-def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
+def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_source_size,
          window_target_size, epochs, batch_size, hs, save_model):
 
     t0 = time.time()
@@ -520,15 +520,6 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
     # seed == given seed
     np.random.seed(seed)
     torch.manual_seed(seed)
-
-    print("Loading dataset...")
-    dataset = pd.read_csv(
-		'data/run-of-river_production_load.csv', 
-		dtype=np.float32,
-		converters={
-			"Date_Time": pd.to_datetime,
-			"Date": pd.to_datetime
-    })
 
     dataset['epochdate'] = dataset['Date_Time'].map(pd.Timestamp.timestamp).astype(np.float32)
 
@@ -906,7 +897,17 @@ def main(seed, cuda, cell_type, attention_model, la_method, window_source_size,
 # for one specific model at a time:
 if __name__ == "__main__":
 
+    print("Loading dataset...")
+    dataset = pd.read_csv(
+		'data/run-of-river_production_load.csv', 
+		dtype=np.float32,
+		converters={
+			"Date_Time": pd.to_datetime,
+			"Date": pd.to_datetime
+    })
+
     s, s2, mape_s, mae_s, mae, mape, total_mins, train_loss, test_loss, for_plotting = main(
+        dataset=dataset,
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
 		cell_type='gru', attention_model='BA', la_method='none', # model architecture
