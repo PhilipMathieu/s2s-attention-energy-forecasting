@@ -513,7 +513,7 @@ class S2S_LA_Model(nn.Module):
 # main function
 
 def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_source_size,
-         window_target_size, epochs, batch_size, hs, save_model):
+         window_target_size, epochs, batch_size, hs, save_model, loss_fn):
 
     t0 = time.time()
 
