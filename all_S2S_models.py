@@ -808,7 +808,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     mae3 = (sum(abs(Value_actual - preds_unnorm)))/(len(Value_actual))
     mape3 = (sum(abs((Value_actual - preds_unnorm)/Value_actual))) / \
         (len(Value_actual))
-    smape3 = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(peds_innorm))))) / \
+    smape3 = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(preds_unnorm)))) / \
         (len(Value_actual))
 
     # for std
