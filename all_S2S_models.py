@@ -639,7 +639,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
         next(model.parameters()).is_cuda))
 
     opt = optim.Adam(model.parameters(), lr=1e-3)
-    loss_fn = nn.MSELoss(reduction='sum')
+    # loss_fn = nn.MSELoss(reduction='sum')
     EPOCHES = epochs
     BATCH_SIZE = batch_size
 
@@ -911,8 +911,9 @@ if __name__ == "__main__":
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
 		cell_type='gru', attention_model='BA', la_method='none', # model architecture
-		window_source_size=96 * 4, # 4 days
-		window_target_size=24, # 6 hours
+		window_source_size=96 * 4,
+		window_target_size=24,
 		epochs=10, batch_size=128, hs=48, # overall training parameters
-		save_model=False
+		save_model=False,
+        loss_fn=nn.MSELoss(reduction='sum')
 		)
