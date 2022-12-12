@@ -808,6 +808,8 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     mae3 = (sum(abs(Value_actual - preds_unnorm)))/(len(Value_actual))
     mape3 = (sum(abs((Value_actual - preds_unnorm)/Value_actual))) / \
         (len(Value_actual))
+    smape3 = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(peds_innorm))))) / \
+        (len(Value_actual))
 
     # for std
     mape_s = (abs((Value_actual - preds_unnorm)/Value_actual))
@@ -816,7 +818,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     mae_s = abs(Value_actual - preds_unnorm)
     s2 = mae_s.std()
 
-    print("\n\tACTUAL ACC. RESULTS: MAE, MAPE: {} and {}%".format(mae3, mape3*100.0))
+    print("\n\tACTUAL ACC. RESULTS: MAE, MAPE, SMAPE: {}, {}%, and {}%".format(mae3, mape3*100.0, smape3*100.0))
 
     # plotting
     # plt.figure(1)
@@ -890,7 +892,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
     for_plotting = [Value_actual, preds_unnorm, y_last_Value, pred_last_Value]
 
-    return s, s2, mape_s, mae_s, mae3, mape3, total/60.0, train_loss, test_loss, for_plotting
+    return s, s2, mape_s, mae_s, mae3, mape3, smape3, total/60.0, train_loss, test_loss, for_plotting
 
 
 ############################################################################################################################
@@ -906,7 +908,7 @@ if __name__ == "__main__":
 			"Date": pd.to_datetime
     })
 
-    s, s2, mape_s, mae_s, mae, mape, total_mins, train_loss, test_loss, for_plotting = main(
+    s, s2, mape_s, mae_s, mae, mape, smape, total_mins, train_loss, test_loss, for_plotting = main(
         dataset=dataset,
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
