@@ -719,6 +719,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
         total_Value_loss = 0
 
         all_preds = []
+        all_actual = []
 
         for b_idx in range(0, X_test.shape[0], BATCH_SIZE):
             with torch.no_grad():
@@ -760,6 +761,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
                 if (epoch == epochs-1):
                     all_preds.append(preds)
+                    all_actual.append(y_Value)
 
         test_loss.append(total_Value_loss)
 
@@ -798,7 +800,8 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     preds = torch.cat(all_preds, 0)
     preds = preds.cpu().detach().numpy().flatten()
 
-    actual = Y_test_Value.flatten()
+    actual = torch.cat(all_actual, 0)
+    actual = actual.cpu().detach().numpy().flatten()
 
     # for loss plotting
     train_loss_array = np.asarray(train_loss)
@@ -808,21 +811,22 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
     # unnormalizing 1
     preds_unnorm = (preds*std_Value) + mu_Value
+    actual_unnorm = (actual*std_Value) + mu_Value
 
     # using the actual Value from top of script here
-    mae = (sum(abs(Value_actual - preds_unnorm)))/(len(Value_actual))
-    mape = (sum(abs((Value_actual - preds_unnorm)/Value_actual))) / \
-        (len(Value_actual))
-    smape = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(preds_unnorm)))) / \
-        (len(Value_actual))
-    rmse = np.sqrt(np.mean((Value_actual - preds_unnorm)**2))
+    mae = (sum(abs(actual_unnorm - preds_unnorm)))/(len(actual_unnorm))
+    mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+        (len(actual_unnorm))
+    smape = (sum(abs(actual_unnorm - preds_unnorm)/(abs(actual_unnorm)+abs(preds_unnorm)))) / \
+        (len(actual_unnorm))
+    rmse = np.sqrt(np.mean((actual_unnorm - preds_unnorm)**2))
 
 
     # for std
-    mape_s = (abs((Value_actual - preds_unnorm)/Value_actual))
+    mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
     s = mape_s.std()
 
-    mae_s = abs(Value_actual - preds_unnorm)
+    mae_s = abs(actual_unnorm - preds_unnorm)
     s2 = mae_s.std()
 
     print("\n\tACTUAL ACC. RESULTS: \n MAE: {}\nMAPE: {}%\nSMAPE: {}%\nRMSE: {}".format(mae, mape*100.0, smape*100.0, rmse))
@@ -919,8 +923,8 @@ if __name__ == "__main__":
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
 		cell_type='lstm', attention_model='BA', la_method='none', # model architecture
-		window_source_size=24 * 4,
+		window_source_size=24 * 14,
 		window_target_size=24 * 2,
-		epochs=1, batch_size=128, hs=12, # overall training parameters
+		epochs=15, batch_size=128, hs=12, # overall training parameters
 		save_model=False
 		)
