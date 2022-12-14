@@ -884,9 +884,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
     plt.figure(7)
     plt.plot(len_loss, test_loss_array, 'r')
-    ylim = plt.gca().get_ylim()
     plt.plot(len_loss, train_loss_array, 'k')
-    plt.gca().set_ylim(ylim)
     plt.title("Train and Test Loss")
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
