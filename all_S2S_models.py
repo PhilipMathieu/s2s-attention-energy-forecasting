@@ -513,7 +513,7 @@ class S2S_LA_Model(nn.Module):
 # main function
 
 def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_source_size,
-         window_target_size, epochs, batch_size, hs, save_model, loss_fn):
+         window_target_size, epochs, batch_size, hs, save_model):
 
     t0 = time.time()
 
@@ -547,8 +547,9 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
     # getting actual Value vector, aligning with predicted values vector. Aka remove first window_source_size and remaining
     Value_actual = Value_actual.values
-    Value_actual = Value_actual[int(dataset.shape[0]*0.80):]
-    Value_actual = Value_actual[WINDOW_SOURCE_SIZE:]
+
+    train_y = (Value_actual[:int(dataset.shape[0]*0.80)] - mu_Value) / std_Value
+    test_y = (Value_actual[int(dataset.shape[0]*0.80):] - mu_Value) / std_Value
 
     # 80% of the data will be train
     # 20% is test
@@ -562,9 +563,6 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
         x_train = []
         y_Value_train = []
 
-        x_test = []
-        y_Value_test = []
-
         # for training data
         idxs = np.random.choice(train_source.shape[0]-(WINDOW_SOURCE_SIZE+WINDOW_TARGET_SIZE),
                                 train_source.shape[0]-(WINDOW_SOURCE_SIZE+WINDOW_TARGET_SIZE), replace=False)
@@ -572,22 +570,25 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
         for idx in idxs:
             x_train.append(train_source[idx:idx+WINDOW_SOURCE_SIZE].reshape(
                 (1, WINDOW_SOURCE_SIZE, train_source.shape[1])))
-            y_Value_train.append(train_source[idx+WINDOW_SOURCE_SIZE:idx+WINDOW_SOURCE_SIZE +
-                                 WINDOW_TARGET_SIZE, -1].reshape((1, WINDOW_TARGET_SIZE, 1)))
+            y_Value_train.append(train_y[idx+WINDOW_SOURCE_SIZE:idx+WINDOW_SOURCE_SIZE +
+                                    WINDOW_TARGET_SIZE].reshape((1, WINDOW_TARGET_SIZE, 1)))
 
         # make them arrays and not lists
         x_train = np.concatenate(x_train, axis=0)
         y_Value_train = np.concatenate(y_Value_train, axis=0)
 
+        x_test = []
+        y_Value_test = []
+
         # for testing data
-        idxs = np.arange(0, len(test_source)-(WINDOW_SOURCE_SIZE +
-                         WINDOW_TARGET_SIZE), WINDOW_TARGET_SIZE)
+        idxs = np.random.choice(test_source.shape[0]-(WINDOW_SOURCE_SIZE+WINDOW_TARGET_SIZE),
+                                test_source.shape[0]-(WINDOW_SOURCE_SIZE+WINDOW_TARGET_SIZE), replace=False)
 
         for idx in idxs:
             x_test.append(test_source[idx:idx+WINDOW_SOURCE_SIZE].reshape(
                 (1, WINDOW_SOURCE_SIZE, test_source.shape[1])))
-            y_Value_test.append(test_source[idx+WINDOW_SOURCE_SIZE:idx+WINDOW_SOURCE_SIZE +
-                                WINDOW_TARGET_SIZE, -1].reshape((1, WINDOW_TARGET_SIZE, 1)))
+            y_Value_test.append(test_y[idx+WINDOW_SOURCE_SIZE:idx+WINDOW_SOURCE_SIZE +
+                                WINDOW_TARGET_SIZE].reshape((1, WINDOW_TARGET_SIZE, 1)))
 
         # make them arrays and not lists
         x_test = np.concatenate(x_test, axis=0)
@@ -598,7 +599,11 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     X_train, Y_train_Value, X_test, Y_test_Value = generate_windows(dataset)
     print("Created {} train samples and {} test samples".format(
         X_train.shape[0], X_test.shape[0]))
+    print("Training shapes:",X_train.shape,Y_train_Value.shape)
+    print("Training shapes:",X_test.shape,Y_test_Value.shape)
 
+    Value_actual = Value_actual[int(dataset.shape[0]*0.80):]
+    Value_actual = Value_actual[WINDOW_SOURCE_SIZE:]
     idxs = np.arange(0, len(test_source)-(WINDOW_SOURCE_SIZE +
                      WINDOW_TARGET_SIZE), WINDOW_TARGET_SIZE)
     remainder = len(test_source) - \
@@ -639,7 +644,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
         next(model.parameters()).is_cuda))
 
     opt = optim.Adam(model.parameters(), lr=1e-3)
-    # loss_fn = nn.MSELoss(reduction='sum')
+    loss_fn = nn.MSELoss(reduction='sum')
     EPOCHES = epochs
     BATCH_SIZE = batch_size
 
@@ -760,12 +765,12 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
         print("\tTESTING: {} total test Value loss".format(total_Value_loss))
 
-        print("\tTESTING:\n")
-        print("\tSample of prediction:")
-        print("\t\t TARGET: {}".format(
-            y_Value[-1].cpu().detach().numpy().flatten()))
-        print("\t\t   PRED: {}\n\n".format(
-            preds[-1].cpu().detach().numpy().flatten()))
+        # print("\tTESTING:\n")
+        # print("\tSample of prediction:")
+        # print("\t\t TARGET: {}".format(
+        #     y_Value[-1].cpu().detach().numpy().flatten()))
+        # print("\t\t   PRED: {}\n\n".format(
+        #     preds[-1].cpu().detach().numpy().flatten()))
 
         y_last_Value = y_Value[-1].cpu().detach().numpy().flatten()
         pred_last_Value = preds[-1].cpu().detach().numpy().flatten()
@@ -805,11 +810,13 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     preds_unnorm = (preds*std_Value) + mu_Value
 
     # using the actual Value from top of script here
-    mae3 = (sum(abs(Value_actual - preds_unnorm)))/(len(Value_actual))
-    mape3 = (sum(abs((Value_actual - preds_unnorm)/Value_actual))) / \
+    mae = (sum(abs(Value_actual - preds_unnorm)))/(len(Value_actual))
+    mape = (sum(abs((Value_actual - preds_unnorm)/Value_actual))) / \
         (len(Value_actual))
-    smape3 = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(preds_unnorm)))) / \
+    smape = (sum(abs(Value_actual - preds_unnorm)/(abs(Value_actual)+abs(preds_unnorm)))) / \
         (len(Value_actual))
+    rmse = np.sqrt(np.mean((Value_actual - preds_unnorm)**2))
+
 
     # for std
     mape_s = (abs((Value_actual - preds_unnorm)/Value_actual))
@@ -818,45 +825,44 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
     mae_s = abs(Value_actual - preds_unnorm)
     s2 = mae_s.std()
 
-    print("\n\tACTUAL ACC. RESULTS: MAE, MAPE, SMAPE: {}, {}%, and {}%".format(mae3, mape3*100.0, smape3*100.0))
+    print("\n\tACTUAL ACC. RESULTS: \n MAE: {}\nMAPE: {}%\nSMAPE: {}%\nRMSE: {}".format(mae, mape*100.0, smape*100.0, rmse))
 
-    # plotting
-    # plt.figure(1)
-    # plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
-    # plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
-    # plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
-    #     window_source_size, window_target_size))
-    # plt.xlabel("Time in 15 minute increments")
-    # plt.ylabel("Value (normalized)")
-    # plt.legend(loc='lower left')
+    plt.figure(1)
+    plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
+    plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
+    plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
+        window_source_size, window_target_size))
+    plt.xlabel("Time in 1-hour increments")
+    plt.ylabel("Value (normalized)")
+    plt.legend(loc='lower left')
 
-    # plt.figure(2)
-    # plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
-    # plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
-    # plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
-    #     window_source_size, window_target_size))
-    # plt.xlabel("Time in 15 minute increments")
-    # plt.ylabel("Value (normalized)")
-    # plt.legend(loc='lower left')
+    plt.figure(2)
+    plt.plot(np.arange(len(actual)), actual, 'g', label='Actual')
+    plt.plot(np.arange(len(preds)), preds, 'b', label='Predicted')
+    plt.title("Predicted vs Actual, {} timesteps to {} timesteps".format(
+        window_source_size, window_target_size))
+    plt.xlabel("Time in 1-hour increments")
+    plt.ylabel("Value (normalized)")
+    plt.legend(loc='lower left')
 
-    # plt.figure(3)
-    # plt.plot(np.arange(len(y_last_Value)), y_last_Value, 'g', label='Actual')
-    # plt.plot(np.arange(len(pred_last_Value)),
-    #          pred_last_Value, 'b', label='Predicted')
-    # plt.title("Predicted vs Actual last test example, {} timesteps to {} timesteps".format(
-    #     window_source_size, window_target_size))
-    # plt.xlabel("Time in 15 minute increments")
-    # plt.ylabel("Value (normalized)")
-    # plt.legend(loc='lower left')
+    plt.figure(3)
+    plt.plot(np.arange(len(y_last_Value)), y_last_Value, 'g', label='Actual')
+    plt.plot(np.arange(len(pred_last_Value)),
+             pred_last_Value, 'b', label='Predicted')
+    plt.title("Predicted vs Actual last test example, {} timesteps to {} timesteps".format(
+        window_source_size, window_target_size))
+    plt.xlabel("Time in 1-hour increments")
+    plt.ylabel("Value (normalized)")
+    plt.legend(loc='lower left')
 
     plt.figure(4)
-    plt.plot(np.arange(len(Value_actual[-4*24*30:])),
-             Value_actual[-4*24*30:], 'g', label='Actual')
-    plt.plot(np.arange(len(preds_unnorm[-4*24*30:])),
-             preds_unnorm[-4*24*30:], 'b', label='Predicted')
+    plt.plot(np.arange(len(Value_actual[-24*30:])),
+             Value_actual[-24*30:], 'g', label='Actual')
+    plt.plot(np.arange(len(preds_unnorm[-24*30:])),
+             preds_unnorm[-24*30:], 'b', label='Predicted')
     plt.title("Predicted vs Actual: Case 2, Zoom last 30 days".format(
         window_source_size, window_target_size))
-    plt.xlabel("Time in 15 minute increments")
+    plt.xlabel("Time in 1-hour increments")
     plt.ylabel("Value (kW)")
     plt.legend(loc='lower left')
 
@@ -892,7 +898,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
     for_plotting = [Value_actual, preds_unnorm, y_last_Value, pred_last_Value]
 
-    return s, s2, mape_s, mae_s, mae3, mape3, smape3, total/60.0, train_loss, test_loss, for_plotting
+    return s, s2, mape_s, mae_s, mae, mape, smape, total/60.0, train_loss, test_loss, for_plotting
 
 
 ############################################################################################################################
@@ -901,7 +907,7 @@ if __name__ == "__main__":
 
     print("Loading dataset...")
     dataset = pd.read_csv(
-		'data/run-of-river_production_load.csv', 
+		'data/run-of-river_production_load_sparse.csv', 
 		dtype=np.float32,
 		converters={
 			"Date_Time": pd.to_datetime,
@@ -912,10 +918,9 @@ if __name__ == "__main__":
         dataset=dataset,
 		seed=0, # for reproducability
 		cuda=False, # change to True if available on your platform
-		cell_type='gru', attention_model='BA', la_method='none', # model architecture
-		window_source_size=96 * 4,
-		window_target_size=24,
-		epochs=10, batch_size=128, hs=48, # overall training parameters
-		save_model=False,
-        loss_fn=nn.MSELoss(reduction='sum')
+		cell_type='lstm', attention_model='BA', la_method='none', # model architecture
+		window_source_size=24 * 4,
+		window_target_size=24 * 2,
+		epochs=1, batch_size=128, hs=12, # overall training parameters
+		save_model=False
 		)
