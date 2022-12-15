@@ -25,7 +25,7 @@ import math
 #from twilio.rest import Client
 
 from tempfile import TemporaryFile
-
+from tqdm import tqdm
 
 #########################################################################################
 
@@ -661,7 +661,7 @@ def main(dataset, seed, cuda, cell_type, attention_model, la_method, window_sour
 
         total_Value_loss = 0
 
-        for b_idx in range(0, X_train.shape[0], BATCH_SIZE):
+        for b_idx in tqdm(range(0, X_train.shape[0], BATCH_SIZE)):
 
             x = torch.from_numpy(X_train[b_idx:b_idx+BATCH_SIZE]).float()
             y_Value = torch.from_numpy(
