@@ -1,0 +1,3239 @@
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 12)
+  (Dcell): LSTMCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 439435.2510986328 total train Value loss.
+
+	TESTING: 171359.62451171875 total test Value loss
+TIME OF ONE EPOCH: 75.2859001159668 seconds and 1.2547650019327798 minutes
+Epoch 2
+	TRAINING: 262761.32556152344 total train Value loss.
+
+	TESTING: 172825.48583984375 total test Value loss
+TIME OF ONE EPOCH: 83.10343933105469 seconds and 1.3850573221842448 minutes
+Epoch 3
+	TRAINING: 224631.0281982422 total train Value loss.
+
+	TESTING: 180980.80810546875 total test Value loss
+TIME OF ONE EPOCH: 79.92906618118286 seconds and 1.3321511030197144 minutes
+Epoch 4
+	TRAINING: 208471.87329101562 total train Value loss.
+
+	TESTING: 189762.50390625 total test Value loss
+TIME OF ONE EPOCH: 79.80070519447327 seconds and 1.330011753241221 minutes
+Epoch 5
+	TRAINING: 195775.8221435547 total train Value loss.
+
+	TESTING: 215521.9423828125 total test Value loss
+TIME OF ONE EPOCH: 68.77973079681396 seconds and 1.1463288466135662 minutes
+Epoch 6
+	TRAINING: 189696.22875976562 total train Value loss.
+
+	TESTING: 206729.36572265625 total test Value loss
+TIME OF ONE EPOCH: 63.87514853477478 seconds and 1.064585808912913 minutes
+Epoch 7
+	TRAINING: 182841.24169921875 total train Value loss.
+
+	TESTING: 232146.9912109375 total test Value loss
+TIME OF ONE EPOCH: 69.34182548522949 seconds and 1.1556970914204916 minutes
+Epoch 8
+	TRAINING: 180356.1778564453 total train Value loss.
+
+	TESTING: 234056.8359375 total test Value loss
+TIME OF ONE EPOCH: 88.50628733634949 seconds and 1.4751047889391582 minutes
+Epoch 9
+	TRAINING: 174633.8748779297 total train Value loss.
+
+	TESTING: 239444.2705078125 total test Value loss
+TIME OF ONE EPOCH: 82.18985366821289 seconds and 1.3698308944702149 minutes
+Epoch 10
+	TRAINING: 172385.64001464844 total train Value loss.
+
+	TESTING: 246700.66455078125 total test Value loss
+TIME OF ONE EPOCH: 81.08030152320862 seconds and 1.3513383587201437 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 632.1592543255963
+MAPE: inf%
+SMAPE: 26.819252962340677%
+RMSE: 791.9046020507812
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 776.4000165462494 seconds OR 12.940000275770823 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 12)
+  (Dcell): RNNCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 491920.9990234375 total train Value loss.
+
+	TESTING: 157394.94580078125 total test Value loss
+TIME OF ONE EPOCH: 66.6234245300293 seconds and 1.1103904088338217 minutes
+Epoch 2
+	TRAINING: 398463.8330078125 total train Value loss.
+
+	TESTING: 154836.19384765625 total test Value loss
+TIME OF ONE EPOCH: 62.1228392124176 seconds and 1.0353806535402934 minutes
+Epoch 3
+	TRAINING: 344391.5732421875 total train Value loss.
+
+	TESTING: 164622.78564453125 total test Value loss
+TIME OF ONE EPOCH: 61.3617787361145 seconds and 1.022696312268575 minutes
+Epoch 4
+	TRAINING: 331762.0087890625 total train Value loss.
+
+	TESTING: 171913.6982421875 total test Value loss
+TIME OF ONE EPOCH: 62.212867975234985 seconds and 1.0368811329205831 minutes
+Epoch 5
+	TRAINING: 342995.88146972656 total train Value loss.
+
+	TESTING: 173985.0947265625 total test Value loss
+TIME OF ONE EPOCH: 61.19917607307434 seconds and 1.0199862678845724 minutes
+Epoch 6
+	TRAINING: 353363.2785644531 total train Value loss.
+
+	TESTING: 211230.65869140625 total test Value loss
+TIME OF ONE EPOCH: 60.84998440742493 seconds and 1.0141664067904155 minutes
+Epoch 7
+	TRAINING: 345266.7526855469 total train Value loss.
+
+	TESTING: 164545.234375 total test Value loss
+TIME OF ONE EPOCH: 67.08213329315186 seconds and 1.1180355548858643 minutes
+Epoch 8
+	TRAINING: 303741.9171142578 total train Value loss.
+
+	TESTING: 152601.26806640625 total test Value loss
+TIME OF ONE EPOCH: 64.78652548789978 seconds and 1.0797754247983298 minutes
+Epoch 9
+	TRAINING: 303349.29040527344 total train Value loss.
+
+	TESTING: 156366.78515625 total test Value loss
+TIME OF ONE EPOCH: 61.57897114753723 seconds and 1.0263161857922871 minutes
+Epoch 10
+	TRAINING: 286622.45654296875 total train Value loss.
+
+	TESTING: 157170.9013671875 total test Value loss
+TIME OF ONE EPOCH: 61.466023683547974 seconds and 1.024433728059133 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 521.5234752445047
+MAPE: inf%
+SMAPE: 21.50595688783743%
+RMSE: 632.0825805664062
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 630.3258330821991 seconds OR 10.505430551369985 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 12)
+  (Dcell): GRUCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 540051.0463867188 total train Value loss.
+
+	TESTING: 149744.30419921875 total test Value loss
+TIME OF ONE EPOCH: 59.62308049201965 seconds and 0.9937180082003275 minutes
+Epoch 2
+	TRAINING: 391611.3913574219 total train Value loss.
+
+	TESTING: 147958.81884765625 total test Value loss
+TIME OF ONE EPOCH: 58.90706992149353 seconds and 0.9817844986915588 minutes
+Epoch 3
+	TRAINING: 305154.36376953125 total train Value loss.
+
+	TESTING: 164852.8583984375 total test Value loss
+TIME OF ONE EPOCH: 60.428149700164795 seconds and 1.0071358283360798 minutes
+Epoch 4
+	TRAINING: 255937.80322265625 total train Value loss.
+
+	TESTING: 175292.24267578125 total test Value loss
+TIME OF ONE EPOCH: 57.91516327857971 seconds and 0.9652527213096619 minutes
+Epoch 5
+	TRAINING: 234772.30981445312 total train Value loss.
+
+	TESTING: 183687.64306640625 total test Value loss
+TIME OF ONE EPOCH: 58.79262685775757 seconds and 0.9798771142959595 minutes
+Epoch 6
+	TRAINING: 221554.90087890625 total train Value loss.
+
+	TESTING: 190260.6259765625 total test Value loss
+TIME OF ONE EPOCH: 58.89850211143494 seconds and 0.981641701857249 minutes
+Epoch 7
+	TRAINING: 213368.05297851562 total train Value loss.
+
+	TESTING: 197723.59423828125 total test Value loss
+TIME OF ONE EPOCH: 59.24628567695618 seconds and 0.9874380946159362 minutes
+Epoch 8
+	TRAINING: 207297.8077392578 total train Value loss.
+
+	TESTING: 205543.09765625 total test Value loss
+TIME OF ONE EPOCH: 59.544679164886475 seconds and 0.9924113194147746 minutes
+Epoch 9
+	TRAINING: 202427.8848876953 total train Value loss.
+
+	TESTING: 213061.25634765625 total test Value loss
+TIME OF ONE EPOCH: 58.08979415893555 seconds and 0.9681632359822591 minutes
+Epoch 10
+	TRAINING: 198347.06811523438 total train Value loss.
+
+	TESTING: 219584.951171875 total test Value loss
+TIME OF ONE EPOCH: 58.393282890319824 seconds and 0.9732213815053304 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 596.7772614674122
+MAPE: inf%
+SMAPE: 26.319608406680384%
+RMSE: 747.11767578125
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 590.9614729881287 seconds OR 9.849357883135477 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 12)
+  (Dcell): LSTMCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 422825.1053161621 total train Value loss.
+
+	TESTING: 150098.5478515625 total test Value loss
+TIME OF ONE EPOCH: 43.152557611465454 seconds and 0.7192092935244242 minutes
+Epoch 2
+	TRAINING: 257449.4112701416 total train Value loss.
+
+	TESTING: 157469.26806640625 total test Value loss
+TIME OF ONE EPOCH: 38.98917555809021 seconds and 0.6498195926348368 minutes
+Epoch 3
+	TRAINING: 218980.18891906738 total train Value loss.
+
+	TESTING: 176895.2763671875 total test Value loss
+TIME OF ONE EPOCH: 40.13595795631409 seconds and 0.6689326326052348 minutes
+Epoch 4
+	TRAINING: 198357.8416442871 total train Value loss.
+
+	TESTING: 174174.49475097656 total test Value loss
+TIME OF ONE EPOCH: 38.73298764228821 seconds and 0.6455497940381368 minutes
+Epoch 5
+	TRAINING: 186642.69314575195 total train Value loss.
+
+	TESTING: 170334.72583007812 total test Value loss
+TIME OF ONE EPOCH: 39.38091492652893 seconds and 0.6563485821088155 minutes
+Epoch 6
+	TRAINING: 179182.58543395996 total train Value loss.
+
+	TESTING: 173165.3260498047 total test Value loss
+TIME OF ONE EPOCH: 38.45190405845642 seconds and 0.6408650676409403 minutes
+Epoch 7
+	TRAINING: 174874.16134643555 total train Value loss.
+
+	TESTING: 176524.7314453125 total test Value loss
+TIME OF ONE EPOCH: 39.65922212600708 seconds and 0.6609870354334514 minutes
+Epoch 8
+	TRAINING: 171392.2911529541 total train Value loss.
+
+	TESTING: 179463.2452392578 total test Value loss
+TIME OF ONE EPOCH: 37.99921798706055 seconds and 0.6333202997843425 minutes
+Epoch 9
+	TRAINING: 168761.73246765137 total train Value loss.
+
+	TESTING: 176667.0595703125 total test Value loss
+TIME OF ONE EPOCH: 38.39976739883423 seconds and 0.6399961233139038 minutes
+Epoch 10
+	TRAINING: 166218.44575500488 total train Value loss.
+
+	TESTING: 171047.1209716797 total test Value loss
+TIME OF ONE EPOCH: 37.965943336486816 seconds and 0.6327657222747802 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 508.3114895562136
+MAPE: inf%
+SMAPE: 23.202794776135647%
+RMSE: 644.9387817382812
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 393.75351214408875 seconds OR 6.562558535734812 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 12)
+  (Dcell): RNNCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 443960.5861816406 total train Value loss.
+
+	TESTING: 127812.64233398438 total test Value loss
+TIME OF ONE EPOCH: 40.7463653087616 seconds and 0.6791060884793599 minutes
+Epoch 2
+	TRAINING: 348107.81144714355 total train Value loss.
+
+	TESTING: 144680.1729736328 total test Value loss
+TIME OF ONE EPOCH: 41.11102032661438 seconds and 0.6851836721102397 minutes
+Epoch 3
+	TRAINING: 315918.9381866455 total train Value loss.
+
+	TESTING: 157253.23046875 total test Value loss
+TIME OF ONE EPOCH: 40.59099221229553 seconds and 0.6765165368715922 minutes
+Epoch 4
+	TRAINING: 298182.2395324707 total train Value loss.
+
+	TESTING: 163537.23193359375 total test Value loss
+TIME OF ONE EPOCH: 40.24664902687073 seconds and 0.6707774837811787 minutes
+Epoch 5
+	TRAINING: 283765.33462524414 total train Value loss.
+
+	TESTING: 180942.29919433594 total test Value loss
+TIME OF ONE EPOCH: 39.828609466552734 seconds and 0.6638101577758789 minutes
+Epoch 6
+	TRAINING: 273474.923248291 total train Value loss.
+
+	TESTING: 203524.080078125 total test Value loss
+TIME OF ONE EPOCH: 40.911306619644165 seconds and 0.6818551103274028 minutes
+Epoch 7
+	TRAINING: 269402.7963104248 total train Value loss.
+
+	TESTING: 199491.14013671875 total test Value loss
+TIME OF ONE EPOCH: 40.11297345161438 seconds and 0.6685495575269064 minutes
+Epoch 8
+	TRAINING: 252391.6280822754 total train Value loss.
+
+	TESTING: 245810.390625 total test Value loss
+TIME OF ONE EPOCH: 39.738927602767944 seconds and 0.6623154600461324 minutes
+Epoch 9
+	TRAINING: 244659.0043334961 total train Value loss.
+
+	TESTING: 268560.2614746094 total test Value loss
+TIME OF ONE EPOCH: 39.63112688064575 seconds and 0.6605187813440959 minutes
+Epoch 10
+	TRAINING: 238986.0873413086 total train Value loss.
+
+	TESTING: 287296.6171875 total test Value loss
+TIME OF ONE EPOCH: 39.0540087223053 seconds and 0.650900145371755 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 628.063617466034
+MAPE: inf%
+SMAPE: 32.54824787467256%
+RMSE: 835.84521484375
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 402.7142653465271 seconds OR 6.711904422442118 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 12)
+  (Dcell): GRUCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 506665.171585083 total train Value loss.
+
+	TESTING: 126909.99426269531 total test Value loss
+TIME OF ONE EPOCH: 39.13336896896362 seconds and 0.6522228161493937 minutes
+Epoch 2
+	TRAINING: 358824.2531738281 total train Value loss.
+
+	TESTING: 133996.8251953125 total test Value loss
+TIME OF ONE EPOCH: 39.38667607307434 seconds and 0.6564446012179057 minutes
+Epoch 3
+	TRAINING: 294827.4949951172 total train Value loss.
+
+	TESTING: 150935.9110107422 total test Value loss
+TIME OF ONE EPOCH: 37.68396210670471 seconds and 0.6280660351117452 minutes
+Epoch 4
+	TRAINING: 244275.19430541992 total train Value loss.
+
+	TESTING: 165324.47521972656 total test Value loss
+TIME OF ONE EPOCH: 38.00391221046448 seconds and 0.6333985368410746 minutes
+Epoch 5
+	TRAINING: 226185.08053588867 total train Value loss.
+
+	TESTING: 181232.8458251953 total test Value loss
+TIME OF ONE EPOCH: 37.88878297805786 seconds and 0.6314797163009643 minutes
+Epoch 6
+	TRAINING: 216324.05421447754 total train Value loss.
+
+	TESTING: 196288.53540039062 total test Value loss
+TIME OF ONE EPOCH: 39.87344145774841 seconds and 0.6645573576291403 minutes
+Epoch 7
+	TRAINING: 209053.09979248047 total train Value loss.
+
+	TESTING: 211073.4580078125 total test Value loss
+TIME OF ONE EPOCH: 38.84200620651245 seconds and 0.6473667701085408 minutes
+Epoch 8
+	TRAINING: 203253.73028564453 total train Value loss.
+
+	TESTING: 222517.46826171875 total test Value loss
+TIME OF ONE EPOCH: 38.02841782569885 seconds and 0.6338069637616476 minutes
+Epoch 9
+	TRAINING: 198813.1328125 total train Value loss.
+
+	TESTING: 230348.6005859375 total test Value loss
+TIME OF ONE EPOCH: 37.782448291778564 seconds and 0.6297074715296428 minutes
+Epoch 10
+	TRAINING: 195173.64068603516 total train Value loss.
+
+	TESTING: 235426.36840820312 total test Value loss
+TIME OF ONE EPOCH: 37.852338552474976 seconds and 0.6308723092079163 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 578.7285713500399
+MAPE: inf%
+SMAPE: 31.71370439483205%
+RMSE: 756.6380615234375
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 385.23474884033203 seconds OR 6.420579147338867 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 12)
+  (Dcell): LSTMCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 422708.6290283203 total train Value loss.
+
+	TESTING: 148698.79077148438 total test Value loss
+TIME OF ONE EPOCH: 29.02022385597229 seconds and 0.48367039759953817 minutes
+Epoch 2
+	TRAINING: 248440.80529785156 total train Value loss.
+
+	TESTING: 152950.52734375 total test Value loss
+TIME OF ONE EPOCH: 27.929848432540894 seconds and 0.4654974738756816 minutes
+Epoch 3
+	TRAINING: 208541.7078857422 total train Value loss.
+
+	TESTING: 154363.77001953125 total test Value loss
+TIME OF ONE EPOCH: 27.697651624679565 seconds and 0.46162752707799276 minutes
+Epoch 4
+	TRAINING: 191782.44116210938 total train Value loss.
+
+	TESTING: 158166.39697265625 total test Value loss
+TIME OF ONE EPOCH: 27.556806325912476 seconds and 0.4592801054318746 minutes
+Epoch 5
+	TRAINING: 182051.9503173828 total train Value loss.
+
+	TESTING: 164914.96533203125 total test Value loss
+TIME OF ONE EPOCH: 27.721054315567017 seconds and 0.4620175719261169 minutes
+Epoch 6
+	TRAINING: 175849.80633544922 total train Value loss.
+
+	TESTING: 173082.18408203125 total test Value loss
+TIME OF ONE EPOCH: 29.231284141540527 seconds and 0.48718806902567546 minutes
+Epoch 7
+	TRAINING: 171703.79595947266 total train Value loss.
+
+	TESTING: 176608.96044921875 total test Value loss
+TIME OF ONE EPOCH: 27.775575637817383 seconds and 0.4629262606302897 minutes
+Epoch 8
+	TRAINING: 168436.11364746094 total train Value loss.
+
+	TESTING: 176290.85693359375 total test Value loss
+TIME OF ONE EPOCH: 27.120532512664795 seconds and 0.4520088752110799 minutes
+Epoch 9
+	TRAINING: 166294.9146118164 total train Value loss.
+
+	TESTING: 171776.52294921875 total test Value loss
+TIME OF ONE EPOCH: 27.341392040252686 seconds and 0.45568986733754474 minutes
+Epoch 10
+	TRAINING: 163703.60375976562 total train Value loss.
+
+	TESTING: 172758.81103515625 total test Value loss
+TIME OF ONE EPOCH: 27.43398904800415 seconds and 0.45723315080006915 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 508.9204127499735
+MAPE: inf%
+SMAPE: 22.0562884436578%
+RMSE: 642.21728515625
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 279.5681824684143 seconds OR 4.659469707806905 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 12)
+  (Dcell): RNNCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 426029.8133544922 total train Value loss.
+
+	TESTING: 108674.0380859375 total test Value loss
+TIME OF ONE EPOCH: 28.523959636688232 seconds and 0.4753993272781372 minutes
+Epoch 2
+	TRAINING: 337761.7489013672 total train Value loss.
+
+	TESTING: 105916.408203125 total test Value loss
+TIME OF ONE EPOCH: 27.969526767730713 seconds and 0.46615877946217854 minutes
+Epoch 3
+	TRAINING: 306641.83825683594 total train Value loss.
+
+	TESTING: 110309.32666015625 total test Value loss
+TIME OF ONE EPOCH: 29.505547761917114 seconds and 0.49175912936528526 minutes
+Epoch 4
+	TRAINING: 286410.8282470703 total train Value loss.
+
+	TESTING: 119452.70385742188 total test Value loss
+TIME OF ONE EPOCH: 28.370723247528076 seconds and 0.4728453874588013 minutes
+Epoch 5
+	TRAINING: 270260.12561035156 total train Value loss.
+
+	TESTING: 125737.12426757812 total test Value loss
+TIME OF ONE EPOCH: 28.662200927734375 seconds and 0.4777033487955729 minutes
+Epoch 6
+	TRAINING: 256326.31787109375 total train Value loss.
+
+	TESTING: 131370.423828125 total test Value loss
+TIME OF ONE EPOCH: 28.050249814987183 seconds and 0.4675041635831197 minutes
+Epoch 7
+	TRAINING: 244739.80493164062 total train Value loss.
+
+	TESTING: 141557.40942382812 total test Value loss
+TIME OF ONE EPOCH: 28.7810537815094 seconds and 0.47968422969182334 minutes
+Epoch 8
+	TRAINING: 238634.2635498047 total train Value loss.
+
+	TESTING: 145952.69506835938 total test Value loss
+TIME OF ONE EPOCH: 28.259738445281982 seconds and 0.4709956407546997 minutes
+Epoch 9
+	TRAINING: 229760.49365234375 total train Value loss.
+
+	TESTING: 158139.75341796875 total test Value loss
+TIME OF ONE EPOCH: 28.53161597251892 seconds and 0.47552693287531533 minutes
+Epoch 10
+	TRAINING: 224658.7227783203 total train Value loss.
+
+	TESTING: 166364.51220703125 total test Value loss
+TIME OF ONE EPOCH: 28.209641933441162 seconds and 0.470160698890686 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 492.05230911649306
+MAPE: inf%
+SMAPE: 23.03614623476985%
+RMSE: 630.2200317382812
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 285.5841431617737 seconds OR 4.759735719362895 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 12)
+  (Dcell): GRUCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 489162.93310546875 total train Value loss.
+
+	TESTING: 111453.57666015625 total test Value loss
+TIME OF ONE EPOCH: 27.372938871383667 seconds and 0.45621564785639446 minutes
+Epoch 2
+	TRAINING: 330851.61975097656 total train Value loss.
+
+	TESTING: 121462.314453125 total test Value loss
+TIME OF ONE EPOCH: 27.793063163757324 seconds and 0.4632177193959554 minutes
+Epoch 3
+	TRAINING: 283479.51611328125 total train Value loss.
+
+	TESTING: 132460.359375 total test Value loss
+TIME OF ONE EPOCH: 27.532408475875854 seconds and 0.45887347459793093 minutes
+Epoch 4
+	TRAINING: 249912.8721923828 total train Value loss.
+
+	TESTING: 129668.6025390625 total test Value loss
+TIME OF ONE EPOCH: 27.34837508201599 seconds and 0.4558062513669332 minutes
+Epoch 5
+	TRAINING: 230813.81860351562 total train Value loss.
+
+	TESTING: 138229.81176757812 total test Value loss
+TIME OF ONE EPOCH: 27.35666298866272 seconds and 0.4559443831443787 minutes
+Epoch 6
+	TRAINING: 217582.5341796875 total train Value loss.
+
+	TESTING: 154573.06079101562 total test Value loss
+TIME OF ONE EPOCH: 27.5687313079834 seconds and 0.45947885513305664 minutes
+Epoch 7
+	TRAINING: 207563.505859375 total train Value loss.
+
+	TESTING: 167709.4853515625 total test Value loss
+TIME OF ONE EPOCH: 27.3310649394989 seconds and 0.4555177489916484 minutes
+Epoch 8
+	TRAINING: 200067.58532714844 total train Value loss.
+
+	TESTING: 175076.99365234375 total test Value loss
+TIME OF ONE EPOCH: 27.81319236755371 seconds and 0.4635532061258952 minutes
+Epoch 9
+	TRAINING: 194410.75048828125 total train Value loss.
+
+	TESTING: 177432.14990234375 total test Value loss
+TIME OF ONE EPOCH: 27.93968391418457 seconds and 0.4656613985697428 minutes
+Epoch 10
+	TRAINING: 190210.0086669922 total train Value loss.
+
+	TESTING: 178936.8623046875 total test Value loss
+TIME OF ONE EPOCH: 27.35556149482727 seconds and 0.45592602491378786 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 490.16639765478266
+MAPE: inf%
+SMAPE: 24.30825995795845%
+RMSE: 653.599609375
+
+TIME ELAPSED: 276.2138202190399 seconds OR 4.603563670317332 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 12)
+  (Dcell): LSTMCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 423697.18701171875 total train Value loss.
+
+	TESTING: 136450.38012695312 total test Value loss
+TIME OF ONE EPOCH: 23.502554178237915 seconds and 0.39170923630396526 minutes
+Epoch 2
+	TRAINING: 253017.9460067749 total train Value loss.
+
+	TESTING: 135995.08728027344 total test Value loss
+TIME OF ONE EPOCH: 23.01155400276184 seconds and 0.38352590004603065 minutes
+Epoch 3
+	TRAINING: 218305.5899810791 total train Value loss.
+
+	TESTING: 139194.77056884766 total test Value loss
+TIME OF ONE EPOCH: 22.538774251937866 seconds and 0.37564623753229776 minutes
+Epoch 4
+	TRAINING: 201992.7984008789 total train Value loss.
+
+	TESTING: 131720.73693847656 total test Value loss
+TIME OF ONE EPOCH: 22.07693862915039 seconds and 0.3679489771525065 minutes
+Epoch 5
+	TRAINING: 192712.37577056885 total train Value loss.
+
+	TESTING: 134788.90216064453 total test Value loss
+TIME OF ONE EPOCH: 21.99160099029541 seconds and 0.36652668317159015 minutes
+Epoch 6
+	TRAINING: 185688.46852111816 total train Value loss.
+
+	TESTING: 131691.96435546875 total test Value loss
+TIME OF ONE EPOCH: 21.967042922973633 seconds and 0.36611738204956057 minutes
+Epoch 7
+	TRAINING: 181310.29133605957 total train Value loss.
+
+	TESTING: 131300.87365722656 total test Value loss
+TIME OF ONE EPOCH: 22.348899602890015 seconds and 0.3724816600481669 minutes
+Epoch 8
+	TRAINING: 180003.23983764648 total train Value loss.
+
+	TESTING: 134465.86157226562 total test Value loss
+TIME OF ONE EPOCH: 21.951813459396362 seconds and 0.36586355765660605 minutes
+Epoch 9
+	TRAINING: 177462.50890731812 total train Value loss.
+
+	TESTING: 131062.85705566406 total test Value loss
+TIME OF ONE EPOCH: 22.06130027770996 seconds and 0.3676883379618327 minutes
+Epoch 10
+	TRAINING: 174311.38591003418 total train Value loss.
+
+	TESTING: 130141.42852783203 total test Value loss
+TIME OF ONE EPOCH: 21.967881441116333 seconds and 0.36613135735193886 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 423.5280385005456
+MAPE: inf%
+SMAPE: 18.431335637711204%
+RMSE: 554.0438842773438
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 224.1421935558319 seconds OR 3.7357032259305316 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 12)
+  (Dcell): RNNCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 398179.56019592285 total train Value loss.
+
+	TESTING: 99988.70715332031 total test Value loss
+TIME OF ONE EPOCH: 28.11054039001465 seconds and 0.46850900650024413 minutes
+Epoch 2
+	TRAINING: 309115.6784439087 total train Value loss.
+
+	TESTING: 104202.74780273438 total test Value loss
+TIME OF ONE EPOCH: 22.964316606521606 seconds and 0.3827386101086934 minutes
+Epoch 3
+	TRAINING: 288500.56315231323 total train Value loss.
+
+	TESTING: 108347.07550048828 total test Value loss
+TIME OF ONE EPOCH: 22.505303621292114 seconds and 0.3750883936882019 minutes
+Epoch 4
+	TRAINING: 271092.9686050415 total train Value loss.
+
+	TESTING: 112985.96466064453 total test Value loss
+TIME OF ONE EPOCH: 22.396909713745117 seconds and 0.3732818285624186 minutes
+Epoch 5
+	TRAINING: 257069.56600952148 total train Value loss.
+
+	TESTING: 113588.90008544922 total test Value loss
+TIME OF ONE EPOCH: 22.455814838409424 seconds and 0.3742635806401571 minutes
+Epoch 6
+	TRAINING: 248865.44510650635 total train Value loss.
+
+	TESTING: 113868.51708984375 total test Value loss
+TIME OF ONE EPOCH: 22.580339431762695 seconds and 0.37633899052937825 minutes
+Epoch 7
+	TRAINING: 239755.11407470703 total train Value loss.
+
+	TESTING: 120226.69738769531 total test Value loss
+TIME OF ONE EPOCH: 22.465942859649658 seconds and 0.374432380994161 minutes
+Epoch 8
+	TRAINING: 234412.17364501953 total train Value loss.
+
+	TESTING: 136099.85089111328 total test Value loss
+TIME OF ONE EPOCH: 22.623146057128906 seconds and 0.3770524342854818 minutes
+Epoch 9
+	TRAINING: 229173.42306518555 total train Value loss.
+
+	TESTING: 122432.30334472656 total test Value loss
+TIME OF ONE EPOCH: 22.528050184249878 seconds and 0.3754675030708313 minutes
+Epoch 10
+	TRAINING: 226341.9395751953 total train Value loss.
+
+	TESTING: 126027.91790771484 total test Value loss
+TIME OF ONE EPOCH: 22.61159348487854 seconds and 0.3768598914146423 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 414.56593379582773
+MAPE: inf%
+SMAPE: 20.418949049600748%
+RMSE: 545.2174682617188
+
+TIME ELAPSED: 232.2180666923523 seconds OR 3.870301111539205 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 12}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 12)
+  (Dcell): GRUCell(13, 12)
+  (Wattn_energies): Linear(in_features=24, out_features=12, bias=True)
+  (WValue): Linear(in_features=12, out_features=1, bias=True)
+  (Wout): Linear(in_features=25, out_features=12, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 464602.62409210205 total train Value loss.
+
+	TESTING: 100105.20904541016 total test Value loss
+TIME OF ONE EPOCH: 22.226734161376953 seconds and 0.37044556935628253 minutes
+Epoch 2
+	TRAINING: 305965.0816497803 total train Value loss.
+
+	TESTING: 102865.57788085938 total test Value loss
+TIME OF ONE EPOCH: 22.954041242599487 seconds and 0.3825673540433248 minutes
+Epoch 3
+	TRAINING: 274083.296710968 total train Value loss.
+
+	TESTING: 111432.916015625 total test Value loss
+TIME OF ONE EPOCH: 23.310476303100586 seconds and 0.38850793838500974 minutes
+Epoch 4
+	TRAINING: 250552.74159622192 total train Value loss.
+
+	TESTING: 116653.84729003906 total test Value loss
+TIME OF ONE EPOCH: 22.74919581413269 seconds and 0.3791532635688782 minutes
+Epoch 5
+	TRAINING: 233215.60706710815 total train Value loss.
+
+	TESTING: 124534.47930908203 total test Value loss
+TIME OF ONE EPOCH: 22.398130416870117 seconds and 0.37330217361450196 minutes
+Epoch 6
+	TRAINING: 218945.96188735962 total train Value loss.
+
+	TESTING: 135226.3662109375 total test Value loss
+TIME OF ONE EPOCH: 22.43279528617859 seconds and 0.3738799214363098 minutes
+Epoch 7
+	TRAINING: 210129.3073234558 total train Value loss.
+
+	TESTING: 138707.81396484375 total test Value loss
+TIME OF ONE EPOCH: 22.131155014038086 seconds and 0.36885258356730144 minutes
+Epoch 8
+	TRAINING: 203577.0920944214 total train Value loss.
+
+	TESTING: 141919.88818359375 total test Value loss
+TIME OF ONE EPOCH: 22.337055683135986 seconds and 0.3722842613855998 minutes
+Epoch 9
+	TRAINING: 198861.39311218262 total train Value loss.
+
+	TESTING: 145999.75219726562 total test Value loss
+TIME OF ONE EPOCH: 22.731003999710083 seconds and 0.37885006666183474 minutes
+Epoch 10
+	TRAINING: 195086.19276428223 total train Value loss.
+
+	TESTING: 149635.93237304688 total test Value loss
+TIME OF ONE EPOCH: 22.203232765197754 seconds and 0.37005387941996254 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 434.47960327853946
+MAPE: inf%
+SMAPE: 20.009670821596732%
+RMSE: 594.0928344726562
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 226.29680800437927 seconds OR 3.7716134667396544 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 24)
+  (Dcell): LSTMCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 305347.7512207031 total train Value loss.
+
+	TESTING: 163912.46728515625 total test Value loss
+TIME OF ONE EPOCH: 82.55583214759827 seconds and 1.3759305357933045 minutes
+Epoch 2
+	TRAINING: 195960.60974121094 total train Value loss.
+
+	TESTING: 188688.35791015625 total test Value loss
+TIME OF ONE EPOCH: 94.93626523017883 seconds and 1.5822710871696473 minutes
+Epoch 3
+	TRAINING: 177755.6600341797 total train Value loss.
+
+	TESTING: 205053.58349609375 total test Value loss
+TIME OF ONE EPOCH: 84.61759924888611 seconds and 1.4102933208147685 minutes
+Epoch 4
+	TRAINING: 172727.72131347656 total train Value loss.
+
+	TESTING: 226059.20068359375 total test Value loss
+TIME OF ONE EPOCH: 83.59017372131348 seconds and 1.3931695620218914 minutes
+Epoch 5
+	TRAINING: 162323.91668701172 total train Value loss.
+
+	TESTING: 225676.12744140625 total test Value loss
+TIME OF ONE EPOCH: 83.6785454750061 seconds and 1.394642424583435 minutes
+Epoch 6
+	TRAINING: 156458.216796875 total train Value loss.
+
+	TESTING: 245228.7529296875 total test Value loss
+TIME OF ONE EPOCH: 84.74264812469482 seconds and 1.4123774687449138 minutes
+Epoch 7
+	TRAINING: 152729.26892089844 total train Value loss.
+
+	TESTING: 239198.1669921875 total test Value loss
+TIME OF ONE EPOCH: 84.73239016532898 seconds and 1.412206502755483 minutes
+Epoch 8
+	TRAINING: 150375.3627319336 total train Value loss.
+
+	TESTING: 236957.91357421875 total test Value loss
+TIME OF ONE EPOCH: 85.88732695579529 seconds and 1.4314554492632547 minutes
+Epoch 9
+	TRAINING: 147157.31787109375 total train Value loss.
+
+	TESTING: 233307.20361328125 total test Value loss
+TIME OF ONE EPOCH: 85.06602835655212 seconds and 1.4177671392758688 minutes
+Epoch 10
+	TRAINING: 144837.3963623047 total train Value loss.
+
+	TESTING: 234688.18212890625 total test Value loss
+TIME OF ONE EPOCH: 85.3660523891449 seconds and 1.4227675398190816 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 625.6927144448091
+MAPE: inf%
+SMAPE: 25.308716071516436%
+RMSE: 772.384033203125
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 858.02707695961 seconds OR 14.300451282660166 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 24)
+  (Dcell): RNNCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 456320.9426269531 total train Value loss.
+
+	TESTING: 155234.23779296875 total test Value loss
+TIME OF ONE EPOCH: 88.14795470237732 seconds and 1.4691325783729554 minutes
+Epoch 2
+	TRAINING: 347824.4659423828 total train Value loss.
+
+	TESTING: 163656.9111328125 total test Value loss
+TIME OF ONE EPOCH: 89.20819902420044 seconds and 1.4868033170700072 minutes
+Epoch 3
+	TRAINING: 297462.02307128906 total train Value loss.
+
+	TESTING: 213658.79150390625 total test Value loss
+TIME OF ONE EPOCH: 87.6892204284668 seconds and 1.4614870071411132 minutes
+Epoch 4
+	TRAINING: 267937.3991699219 total train Value loss.
+
+	TESTING: 302055.8203125 total test Value loss
+TIME OF ONE EPOCH: 88.1921615600586 seconds and 1.46986935933431 minutes
+Epoch 5
+	TRAINING: 251673.951171875 total train Value loss.
+
+	TESTING: 343609.8662109375 total test Value loss
+TIME OF ONE EPOCH: 88.39134740829468 seconds and 1.473189123471578 minutes
+Epoch 6
+	TRAINING: 237298.73864746094 total train Value loss.
+
+	TESTING: 401312.9443359375 total test Value loss
+TIME OF ONE EPOCH: 88.2372887134552 seconds and 1.4706214785575866 minutes
+Epoch 7
+	TRAINING: 228912.94396972656 total train Value loss.
+
+	TESTING: 424794.7265625 total test Value loss
+TIME OF ONE EPOCH: 88.19955921173096 seconds and 1.4699926535288492 minutes
+Epoch 8
+	TRAINING: 218172.63989257812 total train Value loss.
+
+	TESTING: 456346.7333984375 total test Value loss
+TIME OF ONE EPOCH: 88.62575840950012 seconds and 1.4770959734916687 minutes
+Epoch 9
+	TRAINING: 216610.93310546875 total train Value loss.
+
+	TESTING: 438081.4775390625 total test Value loss
+TIME OF ONE EPOCH: 88.90061545372009 seconds and 1.4816769242286683 minutes
+Epoch 10
+	TRAINING: 214205.75231933594 total train Value loss.
+
+	TESTING: 507404.28515625 total test Value loss
+TIME OF ONE EPOCH: 88.28398370742798 seconds and 1.471399728457133 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 951.7425753388779
+MAPE: inf%
+SMAPE: 57.61152152264436%
+RMSE: 1135.702880859375
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 888.6862318515778 seconds OR 14.811437197526296 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 24)
+  (Dcell): GRUCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 460159.7927246094 total train Value loss.
+
+	TESTING: 137051.25219726562 total test Value loss
+TIME OF ONE EPOCH: 83.31079316139221 seconds and 1.3885132193565368 minutes
+Epoch 2
+	TRAINING: 282437.7420654297 total train Value loss.
+
+	TESTING: 174709.4580078125 total test Value loss
+TIME OF ONE EPOCH: 85.44768118858337 seconds and 1.4241280198097228 minutes
+Epoch 3
+	TRAINING: 229684.85473632812 total train Value loss.
+
+	TESTING: 187163.97998046875 total test Value loss
+TIME OF ONE EPOCH: 86.87316751480103 seconds and 1.4478861252466837 minutes
+Epoch 4
+	TRAINING: 212827.2088623047 total train Value loss.
+
+	TESTING: 198885.9541015625 total test Value loss
+TIME OF ONE EPOCH: 85.23719501495361 seconds and 1.4206199169158935 minutes
+Epoch 5
+	TRAINING: 202938.89624023438 total train Value loss.
+
+	TESTING: 221113.8623046875 total test Value loss
+TIME OF ONE EPOCH: 85.07086849212646 seconds and 1.4178478082021078 minutes
+Epoch 6
+	TRAINING: 195515.3740234375 total train Value loss.
+
+	TESTING: 248603.99267578125 total test Value loss
+TIME OF ONE EPOCH: 85.66292381286621 seconds and 1.4277153968811036 minutes
+Epoch 7
+	TRAINING: 188820.45080566406 total train Value loss.
+
+	TESTING: 270953.09375 total test Value loss
+TIME OF ONE EPOCH: 88.73804354667664 seconds and 1.4789673924446105 minutes
+Epoch 8
+	TRAINING: 183066.41174316406 total train Value loss.
+
+	TESTING: 280785.42919921875 total test Value loss
+TIME OF ONE EPOCH: 91.80079579353333 seconds and 1.5300132632255554 minutes
+Epoch 9
+	TRAINING: 179401.5770263672 total train Value loss.
+
+	TESTING: 280320.3935546875 total test Value loss
+TIME OF ONE EPOCH: 90.33834671974182 seconds and 1.505639111995697 minutes
+Epoch 10
+	TRAINING: 176502.7332763672 total train Value loss.
+
+	TESTING: 279855.275390625 total test Value loss
+TIME OF ONE EPOCH: 90.98688864707947 seconds and 1.5164481441179911 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 663.843485938407
+MAPE: inf%
+SMAPE: 34.7752663012904%
+RMSE: 843.4404907226562
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 878.7388422489166 seconds OR 14.645647370815277 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 24)
+  (Dcell): LSTMCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 300617.15447998047 total train Value loss.
+
+	TESTING: 154663.14453125 total test Value loss
+TIME OF ONE EPOCH: 51.78514766693115 seconds and 0.8630857944488526 minutes
+Epoch 2
+	TRAINING: 197041.1576538086 total train Value loss.
+
+	TESTING: 162535.86474609375 total test Value loss
+TIME OF ONE EPOCH: 56.8247184753418 seconds and 0.9470786412556966 minutes
+Epoch 3
+	TRAINING: 174784.8886566162 total train Value loss.
+
+	TESTING: 181438.71020507812 total test Value loss
+TIME OF ONE EPOCH: 55.90160322189331 seconds and 0.9316933870315551 minutes
+Epoch 4
+	TRAINING: 164854.55905151367 total train Value loss.
+
+	TESTING: 190408.107421875 total test Value loss
+TIME OF ONE EPOCH: 58.13468289375305 seconds and 0.9689113815625509 minutes
+Epoch 5
+	TRAINING: 159089.64848327637 total train Value loss.
+
+	TESTING: 195233.2509765625 total test Value loss
+TIME OF ONE EPOCH: 60.50864386558533 seconds and 1.0084773977597554 minutes
+Epoch 6
+	TRAINING: 154647.0587158203 total train Value loss.
+
+	TESTING: 191071.0086669922 total test Value loss
+TIME OF ONE EPOCH: 51.0782630443573 seconds and 0.8513043840726217 minutes
+Epoch 7
+	TRAINING: 151197.05910491943 total train Value loss.
+
+	TESTING: 197652.99291992188 total test Value loss
+TIME OF ONE EPOCH: 51.94153118133545 seconds and 0.8656921863555909 minutes
+Epoch 8
+	TRAINING: 149543.83235931396 total train Value loss.
+
+	TESTING: 185892.0537109375 total test Value loss
+TIME OF ONE EPOCH: 50.76229238510132 seconds and 0.8460382064183553 minutes
+Epoch 9
+	TRAINING: 147087.53367614746 total train Value loss.
+
+	TESTING: 194458.87548828125 total test Value loss
+TIME OF ONE EPOCH: 51.65541434288025 seconds and 0.8609235723813374 minutes
+Epoch 10
+	TRAINING: 149087.85596466064 total train Value loss.
+
+	TESTING: 189685.65991210938 total test Value loss
+TIME OF ONE EPOCH: 51.39633297920227 seconds and 0.8566055496533712 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 522.017328008935
+MAPE: inf%
+SMAPE: 22.112929361773556%
+RMSE: 679.1690063476562
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 541.3044028282166 seconds OR 9.021740047136943 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 24)
+  (Dcell): RNNCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 410746.8719482422 total train Value loss.
+
+	TESTING: 159361.26123046875 total test Value loss
+TIME OF ONE EPOCH: 54.144521713256836 seconds and 0.9024086952209472 minutes
+Epoch 2
+	TRAINING: 305839.58279418945 total train Value loss.
+
+	TESTING: 169035.7764892578 total test Value loss
+TIME OF ONE EPOCH: 52.43495988845825 seconds and 0.8739159981409709 minutes
+Epoch 3
+	TRAINING: 264880.9743347168 total train Value loss.
+
+	TESTING: 202726.1845703125 total test Value loss
+TIME OF ONE EPOCH: 54.87019729614258 seconds and 0.9145032882690429 minutes
+Epoch 4
+	TRAINING: 234328.2647705078 total train Value loss.
+
+	TESTING: 270070.96923828125 total test Value loss
+TIME OF ONE EPOCH: 65.25102949142456 seconds and 1.0875171581904093 minutes
+Epoch 5
+	TRAINING: 219566.53982543945 total train Value loss.
+
+	TESTING: 274752.9753417969 total test Value loss
+TIME OF ONE EPOCH: 66.33736968040466 seconds and 1.1056228280067444 minutes
+Epoch 6
+	TRAINING: 212848.23796081543 total train Value loss.
+
+	TESTING: 300159.341796875 total test Value loss
+TIME OF ONE EPOCH: 66.49190068244934 seconds and 1.108198344707489 minutes
+Epoch 7
+	TRAINING: 205647.9256591797 total train Value loss.
+
+	TESTING: 309988.1923828125 total test Value loss
+TIME OF ONE EPOCH: 65.86188173294067 seconds and 1.0976980288823446 minutes
+Epoch 8
+	TRAINING: 200001.22540283203 total train Value loss.
+
+	TESTING: 336254.2119140625 total test Value loss
+TIME OF ONE EPOCH: 59.99772500991821 seconds and 0.9999620834986369 minutes
+Epoch 9
+	TRAINING: 200868.3444671631 total train Value loss.
+
+	TESTING: 338917.623046875 total test Value loss
+TIME OF ONE EPOCH: 52.42314600944519 seconds and 0.8737191001574198 minutes
+Epoch 10
+	TRAINING: 195177.59727478027 total train Value loss.
+
+	TESTING: 351879.4541015625 total test Value loss
+TIME OF ONE EPOCH: 52.602933406829834 seconds and 0.8767155567804973 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 673.6407201993775
+MAPE: inf%
+SMAPE: 31.39051883111938%
+RMSE: 925.03369140625
+
+TIME ELAPSED: 591.4306471347809 seconds OR 9.857177452246349 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 24)
+  (Dcell): GRUCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 417927.32736206055 total train Value loss.
+
+	TESTING: 132431.16088867188 total test Value loss
+TIME OF ONE EPOCH: 53.2582221031189 seconds and 0.8876370350519817 minutes
+Epoch 2
+	TRAINING: 278984.9887390137 total train Value loss.
+
+	TESTING: 156694.89721679688 total test Value loss
+TIME OF ONE EPOCH: 50.90278458595276 seconds and 0.8483797430992126 minutes
+Epoch 3
+	TRAINING: 232381.79235839844 total train Value loss.
+
+	TESTING: 153175.15893554688 total test Value loss
+TIME OF ONE EPOCH: 51.74541926383972 seconds and 0.8624236543973287 minutes
+Epoch 4
+	TRAINING: 213211.44534301758 total train Value loss.
+
+	TESTING: 150509.43115234375 total test Value loss
+TIME OF ONE EPOCH: 47.90753173828125 seconds and 0.7984588623046875 minutes
+Epoch 5
+	TRAINING: 200855.84550476074 total train Value loss.
+
+	TESTING: 156688.130859375 total test Value loss
+TIME OF ONE EPOCH: 45.45341420173645 seconds and 0.7575569033622742 minutes
+Epoch 6
+	TRAINING: 192442.0651550293 total train Value loss.
+
+	TESTING: 163976.9921875 total test Value loss
+TIME OF ONE EPOCH: 46.41183638572693 seconds and 0.7735306064287821 minutes
+Epoch 7
+	TRAINING: 186648.41764831543 total train Value loss.
+
+	TESTING: 168535.94555664062 total test Value loss
+TIME OF ONE EPOCH: 45.52876663208008 seconds and 0.7588127772013347 minutes
+Epoch 8
+	TRAINING: 182031.42889404297 total train Value loss.
+
+	TESTING: 171782.9490966797 total test Value loss
+TIME OF ONE EPOCH: 49.22147727012634 seconds and 0.8203579545021057 minutes
+Epoch 9
+	TRAINING: 177930.07290649414 total train Value loss.
+
+	TESTING: 174237.16357421875 total test Value loss
+TIME OF ONE EPOCH: 45.983969926834106 seconds and 0.7663994987805685 minutes
+Epoch 10
+	TRAINING: 174132.9411315918 total train Value loss.
+
+	TESTING: 176290.544921875 total test Value loss
+TIME OF ONE EPOCH: 45.37532615661621 seconds and 0.7562554359436036 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 496.6995191257354
+MAPE: inf%
+SMAPE: 24.674471984476074%
+RMSE: 654.7493896484375
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 483.79944586753845 seconds OR 8.063324097792307 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 24)
+  (Dcell): LSTMCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 304998.8723144531 total train Value loss.
+
+	TESTING: 133580.05395507812 total test Value loss
+TIME OF ONE EPOCH: 39.206997871398926 seconds and 0.6534499645233154 minutes
+Epoch 2
+	TRAINING: 190136.37841796875 total train Value loss.
+
+	TESTING: 138203.77685546875 total test Value loss
+TIME OF ONE EPOCH: 36.51925301551819 seconds and 0.6086542169253032 minutes
+Epoch 3
+	TRAINING: 170307.31286621094 total train Value loss.
+
+	TESTING: 149537.24731445312 total test Value loss
+TIME OF ONE EPOCH: 36.210951805114746 seconds and 0.6035158634185791 minutes
+Epoch 4
+	TRAINING: 161964.8653564453 total train Value loss.
+
+	TESTING: 156831.85302734375 total test Value loss
+TIME OF ONE EPOCH: 38.778788566589355 seconds and 0.6463131427764892 minutes
+Epoch 5
+	TRAINING: 157465.77709960938 total train Value loss.
+
+	TESTING: 153810.654296875 total test Value loss
+TIME OF ONE EPOCH: 41.46305727958679 seconds and 0.6910509546597798 minutes
+Epoch 6
+	TRAINING: 153260.75903320312 total train Value loss.
+
+	TESTING: 174285.138671875 total test Value loss
+TIME OF ONE EPOCH: 37.764342308044434 seconds and 0.6294057051340739 minutes
+Epoch 7
+	TRAINING: 150094.94793701172 total train Value loss.
+
+	TESTING: 174330.0888671875 total test Value loss
+TIME OF ONE EPOCH: 36.624096632003784 seconds and 0.6104016105333964 minutes
+Epoch 8
+	TRAINING: 147708.3514404297 total train Value loss.
+
+	TESTING: 186439.58984375 total test Value loss
+TIME OF ONE EPOCH: 38.66971969604492 seconds and 0.6444953282674154 minutes
+Epoch 9
+	TRAINING: 145447.21282958984 total train Value loss.
+
+	TESTING: 192779.3544921875 total test Value loss
+TIME OF ONE EPOCH: 36.669984102249146 seconds and 0.6111664017041524 minutes
+Epoch 10
+	TRAINING: 143837.7098388672 total train Value loss.
+
+	TESTING: 188853.642578125 total test Value loss
+TIME OF ONE EPOCH: 37.305333852767944 seconds and 0.6217555642127991 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 524.5231718729428
+MAPE: inf%
+SMAPE: 22.010506538376266%
+RMSE: 671.466796875
+
+TIME ELAPSED: 380.60308599472046 seconds OR 6.343384766578675 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 24)
+  (Dcell): RNNCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 396800.6506347656 total train Value loss.
+
+	TESTING: 135249.40893554688 total test Value loss
+TIME OF ONE EPOCH: 37.99820518493652 seconds and 0.6333034197489421 minutes
+Epoch 2
+	TRAINING: 295940.40759277344 total train Value loss.
+
+	TESTING: 155266.64086914062 total test Value loss
+TIME OF ONE EPOCH: 37.005011320114136 seconds and 0.6167501886685689 minutes
+Epoch 3
+	TRAINING: 255753.90405273438 total train Value loss.
+
+	TESTING: 180832.2109375 total test Value loss
+TIME OF ONE EPOCH: 37.08833360671997 seconds and 0.6181388934453328 minutes
+Epoch 4
+	TRAINING: 231492.82373046875 total train Value loss.
+
+	TESTING: 208803.4658203125 total test Value loss
+TIME OF ONE EPOCH: 37.39337778091431 seconds and 0.6232229630152385 minutes
+Epoch 5
+	TRAINING: 217431.5177001953 total train Value loss.
+
+	TESTING: 231500.91796875 total test Value loss
+TIME OF ONE EPOCH: 37.213722229003906 seconds and 0.6202287038167318 minutes
+Epoch 6
+	TRAINING: 209578.90771484375 total train Value loss.
+
+	TESTING: 227303.45703125 total test Value loss
+TIME OF ONE EPOCH: 37.57153034210205 seconds and 0.6261921723683676 minutes
+Epoch 7
+	TRAINING: 203017.78881835938 total train Value loss.
+
+	TESTING: 227473.8017578125 total test Value loss
+TIME OF ONE EPOCH: 37.339282751083374 seconds and 0.6223213791847229 minutes
+Epoch 8
+	TRAINING: 198169.1181640625 total train Value loss.
+
+	TESTING: 236836.49951171875 total test Value loss
+TIME OF ONE EPOCH: 37.16607713699341 seconds and 0.6194346189498902 minutes
+Epoch 9
+	TRAINING: 195360.07861328125 total train Value loss.
+
+	TESTING: 216454.6787109375 total test Value loss
+TIME OF ONE EPOCH: 37.513797760009766 seconds and 0.6252299626668294 minutes
+Epoch 10
+	TRAINING: 195120.6768798828 total train Value loss.
+
+	TESTING: 236973.6396484375 total test Value loss
+TIME OF ONE EPOCH: 37.274954080581665 seconds and 0.6212492346763611 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 578.2310446194447
+MAPE: inf%
+SMAPE: 26.4510145850615%
+RMSE: 752.1629028320312
+
+TIME ELAPSED: 374.92955350875854 seconds OR 6.2488258918126425 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 24)
+  (Dcell): GRUCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 400091.7854003906 total train Value loss.
+
+	TESTING: 119680.39428710938 total test Value loss
+TIME OF ONE EPOCH: 35.801403760910034 seconds and 0.5966900626818339 minutes
+Epoch 2
+	TRAINING: 272378.1385498047 total train Value loss.
+
+	TESTING: 140448.46215820312 total test Value loss
+TIME OF ONE EPOCH: 36.04020810127258 seconds and 0.6006701350212097 minutes
+Epoch 3
+	TRAINING: 220811.66345214844 total train Value loss.
+
+	TESTING: 155784.52099609375 total test Value loss
+TIME OF ONE EPOCH: 36.92691159248352 seconds and 0.615448526541392 minutes
+Epoch 4
+	TRAINING: 201908.2264404297 total train Value loss.
+
+	TESTING: 154208.38256835938 total test Value loss
+TIME OF ONE EPOCH: 35.96243715286255 seconds and 0.5993739525477092 minutes
+Epoch 5
+	TRAINING: 193033.18725585938 total train Value loss.
+
+	TESTING: 148913.26049804688 total test Value loss
+TIME OF ONE EPOCH: 37.18615221977234 seconds and 0.6197692036628724 minutes
+Epoch 6
+	TRAINING: 187016.41259765625 total train Value loss.
+
+	TESTING: 146632.70092773438 total test Value loss
+TIME OF ONE EPOCH: 35.71381592750549 seconds and 0.5952302654584248 minutes
+Epoch 7
+	TRAINING: 182198.93713378906 total train Value loss.
+
+	TESTING: 147375.38330078125 total test Value loss
+TIME OF ONE EPOCH: 36.11128807067871 seconds and 0.6018548011779785 minutes
+Epoch 8
+	TRAINING: 178074.12158203125 total train Value loss.
+
+	TESTING: 149164.86596679688 total test Value loss
+TIME OF ONE EPOCH: 35.86562395095825 seconds and 0.5977603991826376 minutes
+Epoch 9
+	TRAINING: 174595.4228515625 total train Value loss.
+
+	TESTING: 150847.70922851562 total test Value loss
+TIME OF ONE EPOCH: 35.88357615470886 seconds and 0.598059602578481 minutes
+Epoch 10
+	TRAINING: 171574.92834472656 total train Value loss.
+
+	TESTING: 153115.56298828125 total test Value loss
+TIME OF ONE EPOCH: 35.744412899017334 seconds and 0.5957402149836223 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 471.425152317981
+MAPE: inf%
+SMAPE: 20.487819435223997%
+RMSE: 604.6046752929688
+
+TIME ELAPSED: 362.2143678665161 seconds OR 6.036906131108602 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 24)
+  (Dcell): LSTMCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 309980.2397079468 total train Value loss.
+
+	TESTING: 115557.52136230469 total test Value loss
+TIME OF ONE EPOCH: 27.93132185935974 seconds and 0.46552203098932904 minutes
+Epoch 2
+	TRAINING: 198522.4278755188 total train Value loss.
+
+	TESTING: 123866.30383300781 total test Value loss
+TIME OF ONE EPOCH: 25.71774959564209 seconds and 0.42862915992736816 minutes
+Epoch 3
+	TRAINING: 176623.41595458984 total train Value loss.
+
+	TESTING: 125512.24255371094 total test Value loss
+TIME OF ONE EPOCH: 26.864100694656372 seconds and 0.4477350115776062 minutes
+Epoch 4
+	TRAINING: 167055.4194908142 total train Value loss.
+
+	TESTING: 129723.09503173828 total test Value loss
+TIME OF ONE EPOCH: 28.653555154800415 seconds and 0.4775592525800069 minutes
+Epoch 5
+	TRAINING: 160631.4203529358 total train Value loss.
+
+	TESTING: 130343.11749267578 total test Value loss
+TIME OF ONE EPOCH: 27.057822942733765 seconds and 0.45096371571222943 minutes
+Epoch 6
+	TRAINING: 156923.23917388916 total train Value loss.
+
+	TESTING: 129969.8505859375 total test Value loss
+TIME OF ONE EPOCH: 25.66195034980774 seconds and 0.4276991724967957 minutes
+Epoch 7
+	TRAINING: 157509.40502166748 total train Value loss.
+
+	TESTING: 128973.0400390625 total test Value loss
+TIME OF ONE EPOCH: 26.1487295627594 seconds and 0.4358121593793233 minutes
+Epoch 8
+	TRAINING: 152223.19152069092 total train Value loss.
+
+	TESTING: 132699.20458984375 total test Value loss
+TIME OF ONE EPOCH: 25.486995935440063 seconds and 0.4247832655906677 minutes
+Epoch 9
+	TRAINING: 149186.87189865112 total train Value loss.
+
+	TESTING: 131632.201171875 total test Value loss
+TIME OF ONE EPOCH: 25.45312523841858 seconds and 0.424218753973643 minutes
+Epoch 10
+	TRAINING: 147313.7946281433 total train Value loss.
+
+	TESTING: 132313.86755371094 total test Value loss
+TIME OF ONE EPOCH: 26.341774225234985 seconds and 0.4390295704205831 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 427.42011743156166
+MAPE: inf%
+SMAPE: 19.337833820944315%
+RMSE: 558.6490478515625
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 265.97190284729004 seconds OR 4.432865047454834 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 24)
+  (Dcell): RNNCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 383352.7333984375 total train Value loss.
+
+	TESTING: 125461.44274902344 total test Value loss
+TIME OF ONE EPOCH: 27.89433217048645 seconds and 0.46490553617477415 minutes
+Epoch 2
+	TRAINING: 284573.15383148193 total train Value loss.
+
+	TESTING: 113428.169921875 total test Value loss
+TIME OF ONE EPOCH: 26.861178874969482 seconds and 0.4476863145828247 minutes
+Epoch 3
+	TRAINING: 251422.5968170166 total train Value loss.
+
+	TESTING: 115599.4379272461 total test Value loss
+TIME OF ONE EPOCH: 26.26508331298828 seconds and 0.43775138854980467 minutes
+Epoch 4
+	TRAINING: 228581.56665039062 total train Value loss.
+
+	TESTING: 125779.5502319336 total test Value loss
+TIME OF ONE EPOCH: 26.296938180923462 seconds and 0.438282303015391 minutes
+Epoch 5
+	TRAINING: 220812.35041809082 total train Value loss.
+
+	TESTING: 132543.2703857422 total test Value loss
+TIME OF ONE EPOCH: 24.639645099639893 seconds and 0.4106607516606649 minutes
+Epoch 6
+	TRAINING: 212297.93335723877 total train Value loss.
+
+	TESTING: 129628.76373291016 total test Value loss
+TIME OF ONE EPOCH: 24.6539306640625 seconds and 0.4108988444010417 minutes
+Epoch 7
+	TRAINING: 203134.24533081055 total train Value loss.
+
+	TESTING: 135197.29162597656 total test Value loss
+TIME OF ONE EPOCH: 24.66681671142578 seconds and 0.41111361185709633 minutes
+Epoch 8
+	TRAINING: 198823.22215652466 total train Value loss.
+
+	TESTING: 139722.39819335938 total test Value loss
+TIME OF ONE EPOCH: 24.605470657348633 seconds and 0.4100911776224772 minutes
+Epoch 9
+	TRAINING: 198245.223903656 total train Value loss.
+
+	TESTING: 135750.12426757812 total test Value loss
+TIME OF ONE EPOCH: 24.844330549240112 seconds and 0.4140721758206685 minutes
+Epoch 10
+	TRAINING: 248199.00959777832 total train Value loss.
+
+	TESTING: 122551.36877441406 total test Value loss
+TIME OF ONE EPOCH: 24.269055128097534 seconds and 0.4044842521349589 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 430.7119319548374
+MAPE: inf%
+SMAPE: 18.78721185049909%
+RMSE: 537.6448364257812
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 255.86314845085144 seconds OR 4.2643858075141905 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 24}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 24)
+  (Dcell): GRUCell(25, 24)
+  (Wattn_energies): Linear(in_features=48, out_features=24, bias=True)
+  (WValue): Linear(in_features=24, out_features=1, bias=True)
+  (Wout): Linear(in_features=49, out_features=24, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 373608.0785827637 total train Value loss.
+
+	TESTING: 107543.25573730469 total test Value loss
+TIME OF ONE EPOCH: 25.5618097782135 seconds and 0.426030162970225 minutes
+Epoch 2
+	TRAINING: 264145.02601623535 total train Value loss.
+
+	TESTING: 127522.37841796875 total test Value loss
+TIME OF ONE EPOCH: 24.809809923171997 seconds and 0.41349683205286664 minutes
+Epoch 3
+	TRAINING: 225967.18243408203 total train Value loss.
+
+	TESTING: 133786.47412109375 total test Value loss
+TIME OF ONE EPOCH: 24.211515188217163 seconds and 0.4035252531369527 minutes
+Epoch 4
+	TRAINING: 210659.30332946777 total train Value loss.
+
+	TESTING: 142351.53442382812 total test Value loss
+TIME OF ONE EPOCH: 24.588311195373535 seconds and 0.40980518658955895 minutes
+Epoch 5
+	TRAINING: 201183.34756469727 total train Value loss.
+
+	TESTING: 151386.98596191406 total test Value loss
+TIME OF ONE EPOCH: 24.29448390007019 seconds and 0.4049080650011698 minutes
+Epoch 6
+	TRAINING: 192463.27475357056 total train Value loss.
+
+	TESTING: 156597.09826660156 total test Value loss
+TIME OF ONE EPOCH: 24.015864372253418 seconds and 0.40026440620422366 minutes
+Epoch 7
+	TRAINING: 185242.56690979004 total train Value loss.
+
+	TESTING: 155916.2000732422 total test Value loss
+TIME OF ONE EPOCH: 24.227899312973022 seconds and 0.4037983218828837 minutes
+Epoch 8
+	TRAINING: 180567.24851226807 total train Value loss.
+
+	TESTING: 150779.6591796875 total test Value loss
+TIME OF ONE EPOCH: 24.064481258392334 seconds and 0.40107468763987225 minutes
+Epoch 9
+	TRAINING: 176542.34684753418 total train Value loss.
+
+	TESTING: 148009.95629882812 total test Value loss
+TIME OF ONE EPOCH: 27.275789499282837 seconds and 0.45459649165471394 minutes
+Epoch 10
+	TRAINING: 173020.32621765137 total train Value loss.
+
+	TESTING: 146938.1962890625 total test Value loss
+TIME OF ONE EPOCH: 24.02556586265564 seconds and 0.40042609771092735 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 430.88887185147837
+MAPE: inf%
+SMAPE: 19.885299556318312%
+RMSE: 588.713134765625
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 247.66002917289734 seconds OR 4.127667152881623 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 48)
+  (Dcell): LSTMCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 269706.89904785156 total train Value loss.
+
+	TESTING: 149245.451171875 total test Value loss
+TIME OF ONE EPOCH: 135.27898502349854 seconds and 2.2546497503916423 minutes
+Epoch 2
+	TRAINING: 178858.4404296875 total train Value loss.
+
+	TESTING: 154930.68798828125 total test Value loss
+TIME OF ONE EPOCH: 137.15008306503296 seconds and 2.285834717750549 minutes
+Epoch 3
+	TRAINING: 162901.9940185547 total train Value loss.
+
+	TESTING: 169194.966796875 total test Value loss
+TIME OF ONE EPOCH: 136.53080916404724 seconds and 2.275513486067454 minutes
+Epoch 4
+	TRAINING: 153775.12884521484 total train Value loss.
+
+	TESTING: 158598.07568359375 total test Value loss
+TIME OF ONE EPOCH: 136.9564208984375 seconds and 2.282607014973958 minutes
+Epoch 5
+	TRAINING: 149007.94525146484 total train Value loss.
+
+	TESTING: 167071.8681640625 total test Value loss
+TIME OF ONE EPOCH: 137.16346287727356 seconds and 2.286057714621226 minutes
+Epoch 6
+	TRAINING: 143807.703125 total train Value loss.
+
+	TESTING: 170700.373046875 total test Value loss
+TIME OF ONE EPOCH: 140.8946089744568 seconds and 2.348243482907613 minutes
+Epoch 7
+	TRAINING: 141137.51245117188 total train Value loss.
+
+	TESTING: 173159.6708984375 total test Value loss
+TIME OF ONE EPOCH: 139.04136085510254 seconds and 2.317356014251709 minutes
+Epoch 8
+	TRAINING: 141828.48474121094 total train Value loss.
+
+	TESTING: 172787.099609375 total test Value loss
+TIME OF ONE EPOCH: 137.20046734809875 seconds and 2.286674455801646 minutes
+Epoch 9
+	TRAINING: 138738.53094482422 total train Value loss.
+
+	TESTING: 172634.60791015625 total test Value loss
+TIME OF ONE EPOCH: 137.50200581550598 seconds and 2.2917000969250996 minutes
+Epoch 10
+	TRAINING: 136925.70404052734 total train Value loss.
+
+	TESTING: 172238.17919921875 total test Value loss
+TIME OF ONE EPOCH: 136.70670223236084 seconds and 2.278445037206014 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 534.8725809432509
+MAPE: inf%
+SMAPE: 22.472815243537784%
+RMSE: 661.686767578125
+
+TIME ELAPSED: 1379.5001783370972 seconds OR 22.99166963895162 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 48)
+  (Dcell): RNNCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 403237.64501953125 total train Value loss.
+
+	TESTING: 159011.8046875 total test Value loss
+TIME OF ONE EPOCH: 139.06419324874878 seconds and 2.317736554145813 minutes
+Epoch 2
+	TRAINING: 283871.8448486328 total train Value loss.
+
+	TESTING: 197848.388671875 total test Value loss
+TIME OF ONE EPOCH: 139.92285752296448 seconds and 2.3320476253827414 minutes
+Epoch 3
+	TRAINING: 247560.958984375 total train Value loss.
+
+	TESTING: 213555.77587890625 total test Value loss
+TIME OF ONE EPOCH: 141.24823689460754 seconds and 2.3541372815767923 minutes
+Epoch 4
+	TRAINING: 228447.6796875 total train Value loss.
+
+	TESTING: 218978.7978515625 total test Value loss
+TIME OF ONE EPOCH: 142.52526688575745 seconds and 2.375421114762624 minutes
+Epoch 5
+	TRAINING: 220101.90563964844 total train Value loss.
+
+	TESTING: 232552.779296875 total test Value loss
+TIME OF ONE EPOCH: 139.2030963897705 seconds and 2.320051606496175 minutes
+Epoch 6
+	TRAINING: 217779.42517089844 total train Value loss.
+
+	TESTING: 213977.625 total test Value loss
+TIME OF ONE EPOCH: 139.71945810317993 seconds and 2.328657635052999 minutes
+Epoch 7
+	TRAINING: 207899.98901367188 total train Value loss.
+
+	TESTING: 228382.53515625 total test Value loss
+TIME OF ONE EPOCH: 140.356059551239 seconds and 2.3392676591873167 minutes
+Epoch 8
+	TRAINING: 201365.01342773438 total train Value loss.
+
+	TESTING: 239998.48974609375 total test Value loss
+TIME OF ONE EPOCH: 139.76153445243835 seconds and 2.329358907540639 minutes
+Epoch 9
+	TRAINING: 198074.06176757812 total train Value loss.
+
+	TESTING: 227757.16357421875 total test Value loss
+TIME OF ONE EPOCH: 140.7302212715149 seconds and 2.3455036878585815 minutes
+Epoch 10
+	TRAINING: 202403.28552246094 total train Value loss.
+
+	TESTING: 229129.5498046875 total test Value loss
+TIME OF ONE EPOCH: 140.21849298477173 seconds and 2.3369748830795287 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 617.5840443996972
+MAPE: inf%
+SMAPE: 25.851346865884317%
+RMSE: 763.1822509765625
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 1407.267166376114 seconds OR 23.45445277293523 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 336, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 15974 train samples and 3706 test samples
+Training shapes: (15974, 336, 44) (15974, 48, 1)
+Training shapes: (3706, 336, 44) (3706, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 48)
+  (Dcell): GRUCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 432044.7229003906 total train Value loss.
+
+	TESTING: 157001.77978515625 total test Value loss
+TIME OF ONE EPOCH: 136.9829080104828 seconds and 2.2830484668413797 minutes
+Epoch 2
+	TRAINING: 258263.64416503906 total train Value loss.
+
+	TESTING: 151087.2734375 total test Value loss
+TIME OF ONE EPOCH: 137.625746011734 seconds and 2.2937624335289 minutes
+Epoch 3
+	TRAINING: 215137.3018798828 total train Value loss.
+
+	TESTING: 147952.85888671875 total test Value loss
+TIME OF ONE EPOCH: 137.22815489768982 seconds and 2.287135914961497 minutes
+Epoch 4
+	TRAINING: 198307.00634765625 total train Value loss.
+
+	TESTING: 154052.7626953125 total test Value loss
+TIME OF ONE EPOCH: 137.27763652801514 seconds and 2.2879606088002524 minutes
+Epoch 5
+	TRAINING: 185563.3272705078 total train Value loss.
+
+	TESTING: 166067.66552734375 total test Value loss
+TIME OF ONE EPOCH: 137.4170331954956 seconds and 2.2902838865915935 minutes
+Epoch 6
+	TRAINING: 176702.23315429688 total train Value loss.
+
+	TESTING: 173337.3046875 total test Value loss
+TIME OF ONE EPOCH: 137.19426441192627 seconds and 2.2865710735321043 minutes
+Epoch 7
+	TRAINING: 171255.22827148438 total train Value loss.
+
+	TESTING: 171044.08642578125 total test Value loss
+TIME OF ONE EPOCH: 137.6636004447937 seconds and 2.2943933407465615 minutes
+Epoch 8
+	TRAINING: 166914.26696777344 total train Value loss.
+
+	TESTING: 164875.70458984375 total test Value loss
+TIME OF ONE EPOCH: 137.47617983818054 seconds and 2.291269663969676 minutes
+Epoch 9
+	TRAINING: 163967.56970214844 total train Value loss.
+
+	TESTING: 154390.38623046875 total test Value loss
+TIME OF ONE EPOCH: 138.54116892814636 seconds and 2.309019482135773 minutes
+Epoch 10
+	TRAINING: 161059.94677734375 total train Value loss.
+
+	TESTING: 156576.1513671875 total test Value loss
+TIME OF ONE EPOCH: 137.76047444343567 seconds and 2.2960079073905946 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 510.76566486492453
+MAPE: inf%
+SMAPE: 21.603018701002185%
+RMSE: 630.8854370117188
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 1378.7165222167969 seconds OR 22.978608703613283 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 48)
+  (Dcell): LSTMCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 258707.98699951172 total train Value loss.
+
+	TESTING: 130238.1806640625 total test Value loss
+TIME OF ONE EPOCH: 68.40254092216492 seconds and 1.1400423487027487 minutes
+Epoch 2
+	TRAINING: 170655.08518981934 total train Value loss.
+
+	TESTING: 137966.83666992188 total test Value loss
+TIME OF ONE EPOCH: 66.8053240776062 seconds and 1.1134220679601035 minutes
+Epoch 3
+	TRAINING: 157294.1989440918 total train Value loss.
+
+	TESTING: 141895.00854492188 total test Value loss
+TIME OF ONE EPOCH: 65.89983415603638 seconds and 1.098330569267273 minutes
+Epoch 4
+	TRAINING: 149102.65933990479 total train Value loss.
+
+	TESTING: 153387.7169189453 total test Value loss
+TIME OF ONE EPOCH: 65.95120811462402 seconds and 1.0991868019104003 minutes
+Epoch 5
+	TRAINING: 144548.24172210693 total train Value loss.
+
+	TESTING: 160673.75805664062 total test Value loss
+TIME OF ONE EPOCH: 65.9502465724945 seconds and 1.0991707762082419 minutes
+Epoch 6
+	TRAINING: 142241.62170410156 total train Value loss.
+
+	TESTING: 149181.4559326172 total test Value loss
+TIME OF ONE EPOCH: 66.0971691608429 seconds and 1.1016194860140482 minutes
+Epoch 7
+	TRAINING: 140178.5289993286 total train Value loss.
+
+	TESTING: 150028.68530273438 total test Value loss
+TIME OF ONE EPOCH: 65.7732846736908 seconds and 1.0962214112281798 minutes
+Epoch 8
+	TRAINING: 139214.67071533203 total train Value loss.
+
+	TESTING: 155962.08264160156 total test Value loss
+TIME OF ONE EPOCH: 66.30927467346191 seconds and 1.1051545778910319 minutes
+Epoch 9
+	TRAINING: 136230.7854309082 total train Value loss.
+
+	TESTING: 150647.22436523438 total test Value loss
+TIME OF ONE EPOCH: 65.99154496192932 seconds and 1.099859082698822 minutes
+Epoch 10
+	TRAINING: 135389.52668762207 total train Value loss.
+
+	TESTING: 161310.06799316406 total test Value loss
+TIME OF ONE EPOCH: 68.46323132514954 seconds and 1.141053855419159 minutes
+
+	ACTUAL ACC. RESULTS: 
+ MAE: 484.6181322900959
+MAPE: inf%
+SMAPE: 20.873187570653624%
+RMSE: 626.3129272460938
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+TIME ELAPSED: 666.5109310150146 seconds OR 11.108515516916912 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 48)
+  (Dcell): RNNCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 348942.9966430664 total train Value loss.
+
+	TESTING: 142187.2598876953 total test Value loss
+TIME OF ONE EPOCH: 72.95055770874023 seconds and 1.2158426284790038 minutes
+Epoch 2
+	TRAINING: 245857.50833129883 total train Value loss.
+
+	TESTING: 160146.4755859375 total test Value loss
+TIME OF ONE EPOCH: 67.720632314682 seconds and 1.1286772052447 minutes
+Epoch 3
+	TRAINING: 216686.9224243164 total train Value loss.
+
+	TESTING: 156322.345703125 total test Value loss
+TIME OF ONE EPOCH: 67.9003164768219 seconds and 1.131671941280365 minutes
+Epoch 4
+	TRAINING: 207544.29145812988 total train Value loss.
+
+	TESTING: 161579.62365722656 total test Value loss
+TIME OF ONE EPOCH: 88.48978209495544 seconds and 1.4748297015825906 minutes
+Epoch 5
+	TRAINING: 199183.53750610352 total train Value loss.
+
+	TESTING: 168570.11572265625 total test Value loss
+TIME OF ONE EPOCH: 82.2533745765686 seconds and 1.3708895762761435 minutes
+Epoch 6
+	TRAINING: 194869.52404785156 total train Value loss.
+
+	TESTING: 176367.43408203125 total test Value loss
+TIME OF ONE EPOCH: 68.1773898601532 seconds and 1.1362898310025533 minutes
+Epoch 7
+	TRAINING: 194637.80918884277 total train Value loss.
+
+	TESTING: 169470.99609375 total test Value loss
+TIME OF ONE EPOCH: 82.32929420471191 seconds and 1.3721549034118652 minutes
+Epoch 8
+	TRAINING: 187965.06423950195 total train Value loss.
+
+	TESTING: 172335.9775390625 total test Value loss
+TIME OF ONE EPOCH: 67.55916953086853 seconds and 1.1259861588478088 minutes
+Epoch 9
+	TRAINING: 193483.1040649414 total train Value loss.
+
+	TESTING: 191360.4091796875 total test Value loss
+TIME OF ONE EPOCH: 66.69739437103271 seconds and 1.1116232395172119 minutes
+Epoch 10
+	TRAINING: 181072.94815063477 total train Value loss.
+
+	TESTING: 197884.22973632812 total test Value loss
+TIME OF ONE EPOCH: 66.69811129570007 seconds and 1.111635188261668 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 520.4312206282096
+MAPE: inf%
+SMAPE: 22.504699797508074%
+RMSE: 693.6912231445312
+
+TIME ELAPSED: 731.7570884227753 seconds OR 12.19595147371292 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 168, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16142 train samples and 3874 test samples
+Training shapes: (16142, 168, 44) (16142, 48, 1)
+Training shapes: (3874, 168, 44) (3874, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 48)
+  (Dcell): GRUCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 369870.20529174805 total train Value loss.
+
+	TESTING: 132264.1650390625 total test Value loss
+TIME OF ONE EPOCH: 64.79353284835815 seconds and 1.0798922141393026 minutes
+Epoch 2
+	TRAINING: 250963.4528656006 total train Value loss.
+
+	TESTING: 138665.3094482422 total test Value loss
+TIME OF ONE EPOCH: 64.93750286102295 seconds and 1.0822917143503825 minutes
+Epoch 3
+	TRAINING: 215825.06130981445 total train Value loss.
+
+	TESTING: 143580.26147460938 total test Value loss
+TIME OF ONE EPOCH: 64.76802849769592 seconds and 1.0794671416282653 minutes
+Epoch 4
+	TRAINING: 197406.591506958 total train Value loss.
+
+	TESTING: 150888.4581298828 total test Value loss
+TIME OF ONE EPOCH: 64.79148864746094 seconds and 1.0798581441243489 minutes
+Epoch 5
+	TRAINING: 184944.4494781494 total train Value loss.
+
+	TESTING: 159685.37036132812 total test Value loss
+TIME OF ONE EPOCH: 64.89756846427917 seconds and 1.0816261410713195 minutes
+Epoch 6
+	TRAINING: 175346.16262817383 total train Value loss.
+
+	TESTING: 163879.044921875 total test Value loss
+TIME OF ONE EPOCH: 64.76129674911499 seconds and 1.0793549458185832 minutes
+Epoch 7
+	TRAINING: 168116.1699066162 total train Value loss.
+
+	TESTING: 164133.26977539062 total test Value loss
+TIME OF ONE EPOCH: 64.99070048332214 seconds and 1.0831783413887024 minutes
+Epoch 8
+	TRAINING: 162587.32223510742 total train Value loss.
+
+	TESTING: 158272.62475585938 total test Value loss
+TIME OF ONE EPOCH: 64.6070396900177 seconds and 1.0767839948336284 minutes
+Epoch 9
+	TRAINING: 158341.45092773438 total train Value loss.
+
+	TESTING: 153263.6298828125 total test Value loss
+TIME OF ONE EPOCH: 65.3300371170044 seconds and 1.0888339519500732 minutes
+Epoch 10
+	TRAINING: 155554.85720825195 total train Value loss.
+
+	TESTING: 150839.81323242188 total test Value loss
+TIME OF ONE EPOCH: 65.58964228630066 seconds and 1.0931607047716776 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 477.56333132796186
+MAPE: inf%
+SMAPE: 20.479337670549757%
+RMSE: 605.6456909179688
+
+TIME ELAPSED: 651.0701212882996 seconds OR 10.851168688138326 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 48)
+  (Dcell): LSTMCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 254018.13537597656 total train Value loss.
+
+	TESTING: 146174.30346679688 total test Value loss
+TIME OF ONE EPOCH: 40.65634727478027 seconds and 0.6776057879130045 minutes
+Epoch 2
+	TRAINING: 170845.81170654297 total train Value loss.
+
+	TESTING: 171954.857421875 total test Value loss
+TIME OF ONE EPOCH: 39.36971712112427 seconds and 0.6561619520187378 minutes
+Epoch 3
+	TRAINING: 160106.3432006836 total train Value loss.
+
+	TESTING: 159789.4794921875 total test Value loss
+TIME OF ONE EPOCH: 39.8926477432251 seconds and 0.664877462387085 minutes
+Epoch 4
+	TRAINING: 150724.5489501953 total train Value loss.
+
+	TESTING: 144009.05908203125 total test Value loss
+TIME OF ONE EPOCH: 39.221405267715454 seconds and 0.6536900877952576 minutes
+Epoch 5
+	TRAINING: 145507.08361816406 total train Value loss.
+
+	TESTING: 149899.48413085938 total test Value loss
+TIME OF ONE EPOCH: 39.53757882118225 seconds and 0.6589596470197042 minutes
+Epoch 6
+	TRAINING: 141835.2787475586 total train Value loss.
+
+	TESTING: 142852.06323242188 total test Value loss
+TIME OF ONE EPOCH: 39.43362760543823 seconds and 0.6572271267573039 minutes
+Epoch 7
+	TRAINING: 138394.59100341797 total train Value loss.
+
+	TESTING: 137368.21948242188 total test Value loss
+TIME OF ONE EPOCH: 41.80373740196228 seconds and 0.6967289566993713 minutes
+Epoch 8
+	TRAINING: 140371.76623535156 total train Value loss.
+
+	TESTING: 133764.42138671875 total test Value loss
+TIME OF ONE EPOCH: 39.54215908050537 seconds and 0.6590359846750895 minutes
+Epoch 9
+	TRAINING: 136630.1050415039 total train Value loss.
+
+	TESTING: 138621.4560546875 total test Value loss
+TIME OF ONE EPOCH: 39.21476697921753 seconds and 0.6535794496536255 minutes
+Epoch 10
+	TRAINING: 133929.75164794922 total train Value loss.
+
+	TESTING: 138040.2841796875 total test Value loss
+TIME OF ONE EPOCH: 39.518457889556885 seconds and 0.658640964825948 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 449.6184508250682
+MAPE: inf%
+SMAPE: 19.981704918987326%
+RMSE: 574.0699462890625
+
+TIME ELAPSED: 399.0454559326172 seconds OR 6.650757598876953 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 48)
+  (Dcell): RNNCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 337837.12341308594 total train Value loss.
+
+	TESTING: 113218.28466796875 total test Value loss
+TIME OF ONE EPOCH: 40.45484709739685 seconds and 0.6742474516232808 minutes
+Epoch 2
+	TRAINING: 239479.02087402344 total train Value loss.
+
+	TESTING: 144864.44384765625 total test Value loss
+TIME OF ONE EPOCH: 40.83318734169006 seconds and 0.680553122361501 minutes
+Epoch 3
+	TRAINING: 209288.04162597656 total train Value loss.
+
+	TESTING: 145878.755859375 total test Value loss
+TIME OF ONE EPOCH: 40.07584357261658 seconds and 0.6679307262102763 minutes
+Epoch 4
+	TRAINING: 196302.55224609375 total train Value loss.
+
+	TESTING: 155271.1787109375 total test Value loss
+TIME OF ONE EPOCH: 40.79037523269653 seconds and 0.6798395872116089 minutes
+Epoch 5
+	TRAINING: 189734.34313964844 total train Value loss.
+
+	TESTING: 153991.57470703125 total test Value loss
+TIME OF ONE EPOCH: 40.89556813240051 seconds and 0.6815928022066752 minutes
+Epoch 6
+	TRAINING: 182600.27880859375 total train Value loss.
+
+	TESTING: 159562.1298828125 total test Value loss
+TIME OF ONE EPOCH: 40.73221397399902 seconds and 0.6788702328999837 minutes
+Epoch 7
+	TRAINING: 194344.3868408203 total train Value loss.
+
+	TESTING: 129374.30590820312 total test Value loss
+TIME OF ONE EPOCH: 40.439786434173584 seconds and 0.6739964405695598 minutes
+Epoch 8
+	TRAINING: 189437.73413085938 total train Value loss.
+
+	TESTING: 150884.03125 total test Value loss
+TIME OF ONE EPOCH: 40.72590780258179 seconds and 0.6787651300430297 minutes
+Epoch 9
+	TRAINING: 183802.35400390625 total train Value loss.
+
+	TESTING: 170373.45263671875 total test Value loss
+TIME OF ONE EPOCH: 40.384092569351196 seconds and 0.6730682094891866 minutes
+Epoch 10
+	TRAINING: 174823.26306152344 total train Value loss.
+
+	TESTING: 178713.75439453125 total test Value loss
+TIME OF ONE EPOCH: 41.027957916259766 seconds and 0.6837992986043294 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 499.4197505664777
+MAPE: inf%
+SMAPE: 22.02400465884881%
+RMSE: 653.1920166015625
+
+TIME ELAPSED: 407.32863783836365 seconds OR 6.788810630639394 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 96, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16214 train samples and 3946 test samples
+Training shapes: (16214, 96, 44) (16214, 48, 1)
+Training shapes: (3946, 96, 44) (3946, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 48)
+  (Dcell): GRUCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 349128.93420410156 total train Value loss.
+
+	TESTING: 128248.13623046875 total test Value loss
+TIME OF ONE EPOCH: 39.61682987213135 seconds and 0.6602804978688558 minutes
+Epoch 2
+	TRAINING: 242469.71130371094 total train Value loss.
+
+	TESTING: 141001.98193359375 total test Value loss
+TIME OF ONE EPOCH: 40.09294366836548 seconds and 0.6682157278060913 minutes
+Epoch 3
+	TRAINING: 204589.96533203125 total train Value loss.
+
+	TESTING: 151983.2392578125 total test Value loss
+TIME OF ONE EPOCH: 40.51075530052185 seconds and 0.6751792550086975 minutes
+Epoch 4
+	TRAINING: 188097.0379638672 total train Value loss.
+
+	TESTING: 155117.37841796875 total test Value loss
+TIME OF ONE EPOCH: 40.55532145500183 seconds and 0.6759220242500306 minutes
+Epoch 5
+	TRAINING: 178534.55407714844 total train Value loss.
+
+	TESTING: 156018.0146484375 total test Value loss
+TIME OF ONE EPOCH: 39.78538537025452 seconds and 0.6630897561709086 minutes
+Epoch 6
+	TRAINING: 172010.24096679688 total train Value loss.
+
+	TESTING: 152727.31225585938 total test Value loss
+TIME OF ONE EPOCH: 40.17844319343567 seconds and 0.6696407198905945 minutes
+Epoch 7
+	TRAINING: 167919.85552978516 total train Value loss.
+
+	TESTING: 143897.79614257812 total test Value loss
+TIME OF ONE EPOCH: 40.40256381034851 seconds and 0.6733760635058085 minutes
+Epoch 8
+	TRAINING: 164525.1577758789 total train Value loss.
+
+	TESTING: 135399.43505859375 total test Value loss
+TIME OF ONE EPOCH: 40.946884632110596 seconds and 0.6824480772018433 minutes
+Epoch 9
+	TRAINING: 159558.85479736328 total train Value loss.
+
+	TESTING: 131443.85009765625 total test Value loss
+TIME OF ONE EPOCH: 39.73775935173035 seconds and 0.6622959891955058 minutes
+Epoch 10
+	TRAINING: 155709.17224121094 total train Value loss.
+
+	TESTING: 129038.51293945312 total test Value loss
+TIME OF ONE EPOCH: 40.35331702232361 seconds and 0.6725552837053935 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 436.00265827459305
+MAPE: inf%
+SMAPE: 18.81348314034233%
+RMSE: 555.0364990234375
+
+TIME ELAPSED: 403.11768865585327 seconds OR 6.718628144264221 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'lstm', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): LSTMCell(44, 48)
+  (Dcell): LSTMCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 264587.550743103 total train Value loss.
+
+	TESTING: 113859.01776123047 total test Value loss
+TIME OF ONE EPOCH: 32.18514633178711 seconds and 0.5364191055297851 minutes
+Epoch 2
+	TRAINING: 178113.57763290405 total train Value loss.
+
+	TESTING: 117506.42626953125 total test Value loss
+TIME OF ONE EPOCH: 31.879249811172485 seconds and 0.5313208301862081 minutes
+Epoch 3
+	TRAINING: 161807.35441589355 total train Value loss.
+
+	TESTING: 123551.14611816406 total test Value loss
+TIME OF ONE EPOCH: 31.704054594039917 seconds and 0.5284009099006652 minutes
+Epoch 4
+	TRAINING: 153053.1837463379 total train Value loss.
+
+	TESTING: 128376.45715332031 total test Value loss
+TIME OF ONE EPOCH: 31.461833477020264 seconds and 0.5243638912836711 minutes
+Epoch 5
+	TRAINING: 145735.61921691895 total train Value loss.
+
+	TESTING: 130537.86389160156 total test Value loss
+TIME OF ONE EPOCH: 30.836230516433716 seconds and 0.5139371752738953 minutes
+Epoch 6
+	TRAINING: 143297.7707710266 total train Value loss.
+
+	TESTING: 126015.13720703125 total test Value loss
+TIME OF ONE EPOCH: 31.708518028259277 seconds and 0.528475300470988 minutes
+Epoch 7
+	TRAINING: 139848.7465248108 total train Value loss.
+
+	TESTING: 130432.69653320312 total test Value loss
+TIME OF ONE EPOCH: 31.108296155929565 seconds and 0.5184716025988261 minutes
+Epoch 8
+	TRAINING: 140406.15866851807 total train Value loss.
+
+	TESTING: 126156.88806152344 total test Value loss
+TIME OF ONE EPOCH: 31.6111958026886 seconds and 0.5268532633781433 minutes
+Epoch 9
+	TRAINING: 138159.58153533936 total train Value loss.
+
+	TESTING: 118770.03063964844 total test Value loss
+TIME OF ONE EPOCH: 31.455931425094604 seconds and 0.5242655237515768 minutes
+Epoch 10
+	TRAINING: 135873.373588562 total train Value loss.
+
+	TESTING: 123845.10607910156 total test Value loss
+TIME OF ONE EPOCH: 31.473572731018066 seconds and 0.5245595455169678 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 418.03752084718366
+MAPE: inf%
+SMAPE: 18.66074416023648%
+RMSE: 540.4752197265625
+
+TIME ELAPSED: 316.5518493652344 seconds OR 5.2758641560872395 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'rnn', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): RNNCell(44, 48)
+  (Dcell): RNNCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 320453.1051940918 total train Value loss.
+
+	TESTING: 104035.44750976562 total test Value loss
+TIME OF ONE EPOCH: 31.8208065032959 seconds and 0.5303467750549317 minutes
+Epoch 2
+	TRAINING: 241553.50129699707 total train Value loss.
+
+	TESTING: 116324.30645751953 total test Value loss
+TIME OF ONE EPOCH: 30.86319088935852 seconds and 0.514386514822642 minutes
+Epoch 3
+	TRAINING: 217815.08428955078 total train Value loss.
+
+	TESTING: 118827.10681152344 total test Value loss
+TIME OF ONE EPOCH: 31.0874924659729 seconds and 0.5181248744328817 minutes
+Epoch 4
+	TRAINING: 207716.28910827637 total train Value loss.
+
+	TESTING: 120220.21203613281 total test Value loss
+TIME OF ONE EPOCH: 31.297237157821655 seconds and 0.5216206192970276 minutes
+Epoch 5
+	TRAINING: 204966.46237182617 total train Value loss.
+
+	TESTING: 121534.31652832031 total test Value loss
+TIME OF ONE EPOCH: 31.554644346237183 seconds and 0.525910739103953 minutes
+Epoch 6
+	TRAINING: 198634.54796600342 total train Value loss.
+
+	TESTING: 123386.01403808594 total test Value loss
+TIME OF ONE EPOCH: 31.57527756690979 seconds and 0.5262546261151632 minutes
+Epoch 7
+	TRAINING: 189867.80186462402 total train Value loss.
+
+	TESTING: 127026.38543701172 total test Value loss
+TIME OF ONE EPOCH: 31.10661220550537 seconds and 0.5184435367584228 minutes
+Epoch 8
+	TRAINING: 187854.5502319336 total train Value loss.
+
+	TESTING: 133268.32733154297 total test Value loss
+TIME OF ONE EPOCH: 31.46328091621399 seconds and 0.5243880152702332 minutes
+Epoch 9
+	TRAINING: 186804.585395813 total train Value loss.
+
+	TESTING: 132560.65698242188 total test Value loss
+TIME OF ONE EPOCH: 31.316651105880737 seconds and 0.5219441850980123 minutes
+Epoch 10
+	TRAINING: 185244.37091064453 total train Value loss.
+
+	TESTING: 134094.69708251953 total test Value loss
+TIME OF ONE EPOCH: 31.560921907424927 seconds and 0.5260153651237488 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 445.3931365232001
+MAPE: inf%
+SMAPE: 19.270923484704845%
+RMSE: 562.3959350585938
+
+TIME ELAPSED: 314.60523200035095 seconds OR 5.243420533339182 minutes
+
+End of run
+
+
+
+
+
+
+
+{'cell_type': 'gru', 'attention_model': ['BA'], 'window_source_size': 48, 'hs': 48}
+Transforming data to 0 mean and unit var
+Generating training and test data...
+Created 16262 train samples and 3994 test samples
+Training shapes: (16262, 48, 44) (16262, 48, 1)
+Training shapes: (3994, 48, 44) (3994, 48, 1)
+MODEL ARCHITECTURE IS: 
+S2S_BA_Model(
+  (Ecell): GRUCell(44, 48)
+  (Dcell): GRUCell(49, 48)
+  (Wattn_energies): Linear(in_features=96, out_features=48, bias=True)
+  (WValue): Linear(in_features=48, out_features=1, bias=True)
+  (Wout): Linear(in_features=97, out_features=48, bias=True)
+)
+
+Model parameters are on cuda: True
+
+Starting training...
+Epoch 1
+	TRAINING: 327690.72256469727 total train Value loss.
+
+	TESTING: 108863.97778320312 total test Value loss
+TIME OF ONE EPOCH: 34.895368576049805 seconds and 0.5815894762674968 minutes
+Epoch 2
+	TRAINING: 246701.19969940186 total train Value loss.
+
+	TESTING: 116672.98608398438 total test Value loss
+TIME OF ONE EPOCH: 29.969428300857544 seconds and 0.49949047168095906 minutes
+Epoch 3
+	TRAINING: 215254.26934814453 total train Value loss.
+
+	TESTING: 120513.12481689453 total test Value loss
+TIME OF ONE EPOCH: 30.282426595687866 seconds and 0.5047071099281311 minutes
+Epoch 4
+	TRAINING: 196925.39837646484 total train Value loss.
+
+	TESTING: 126148.07470703125 total test Value loss
+TIME OF ONE EPOCH: 30.258863925933838 seconds and 0.5043143987655639 minutes
+Epoch 5
+	TRAINING: 185698.2706375122 total train Value loss.
+
+	TESTING: 130808.63256835938 total test Value loss
+TIME OF ONE EPOCH: 31.008846521377563 seconds and 0.5168141086896261 minutes
+Epoch 6
+	TRAINING: 177763.2341003418 total train Value loss.
+
+	TESTING: 128638.18676757812 total test Value loss
+TIME OF ONE EPOCH: 31.10972285270691 seconds and 0.5184953808784485 minutes
+Epoch 7
+	TRAINING: 171384.0657196045 total train Value loss.
+
+	TESTING: 125797.97277832031 total test Value loss
+TIME OF ONE EPOCH: 31.261043071746826 seconds and 0.5210173845291137 minutes
+Epoch 8
+	TRAINING: 166357.90409851074 total train Value loss.
+
+	TESTING: 122738.63861083984 total test Value loss
+TIME OF ONE EPOCH: 31.83635139465332 seconds and 0.5306058565775553 minutes
+Epoch 9
+	TRAINING: 162862.42250061035 total train Value loss.
+
+	TESTING: 121187.32958984375 total test Value loss
+TIME OF ONE EPOCH: 31.210805654525757 seconds and 0.520180094242096 minutes
+Epoch 10
+	TRAINING: 159528.80646896362 total train Value loss.
+
+	TESTING: 121356.4769897461 total test Value loss
+TIME OF ONE EPOCH: 31.440091133117676 seconds and 0.5240015188852946 minutes
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:818: RuntimeWarning: divide by zero encountered in divide
+  mape = (sum(abs((actual_unnorm - preds_unnorm)/actual_unnorm))) / \
+/home/philip/src/ds5220-team-2/s2s-attention-energy-forecasting/all_S2S_models.py:826: RuntimeWarning: divide by zero encountered in divide
+  mape_s = (abs((actual_unnorm - preds_unnorm)/actual_unnorm))
+/home/philip/mambaforge/envs/ds5220/lib/python3.10/site-packages/numpy/core/_methods.py:233: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+	ACTUAL ACC. RESULTS: 
+ MAE: 411.06056454734437
+MAPE: inf%
+SMAPE: 18.148831593902333%
+RMSE: 535.017333984375
+
+TIME ELAPSED: 314.18328046798706 seconds OR 5.236388007799785 minutes
+
+End of run
+
+
+
+
+
+
