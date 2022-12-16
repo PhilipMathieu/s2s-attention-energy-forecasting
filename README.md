@@ -1,4 +1,4 @@
-# Energy Forecasting using S2S, S2S with attention, Regular RNN, and DNN models, as applied to run-of-river electrical production
+# Energy Forecasting using S2S with Attention as Applied to Run-of-River Hydropower
 
 This project adapts code from Ljubisa Sehovac. For the original work, please see the [upstream GitHub repository](https://github.com/sehovaclj/Thesis-work_energy-forecasting) or [L. Sehovac and K. Grolinger, "Deep Learning for Load Forecasting: Sequence to Sequence Recurrent Neural Networks With Attention," in _IEEE Access_, vol. 8, pp. 36411-36426, 2020, doi: 10.1109/ACCESS.2020.2975738](https://doi.org/10.1109/ACCESS.2020.2975738). [The original README is located here.](./readme_upstream.md)
 
